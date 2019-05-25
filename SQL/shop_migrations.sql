@@ -1,0 +1,10 @@
+INSERT INTO shop.migrations (id, migration, batch) VALUES (1, '2014_10_12_000000_create_users_table', 1);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (2, '2014_10_12_100000_create_password_resets_table', 1);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (3, '2018_10_25_224625_create_products_table', 1);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (4, '2018_10_27_230750_create_cloths_table', 1);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (5, '2018_10_27_232202_create_specifications_table', 1);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (6, '2018_11_02_220319_create_categories_table', 2);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (7, '2019_01_20_211730_create_category_product_table', 3);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (8, '2019_01_30_150603_create_category_products_table', 4);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (9, '2019_05_18_201308_create_shops_table', 4);
+INSERT INTO shop.migrations (id, migration, batch) VALUES (10, '2019_05_19_113832_create_categories_table', 5);

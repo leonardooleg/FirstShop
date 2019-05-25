@@ -1,0 +1,2 @@
+INSERT INTO shop.specifications (id, cloth_id, color, count, gender, created_at, updated_at) VALUES (1, 1, 'красный', '50', 'м', null, null);
+INSERT INTO shop.specifications (id, cloth_id, color, count, gender, created_at, updated_at) VALUES (2, 2, 'красный', '51', 'ж', null, null);
