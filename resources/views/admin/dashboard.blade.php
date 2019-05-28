@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="jumbotron">
-                    <p><label class="btn btn-primary">Категорий 0</label></p>
+                    <p><label class="btn btn-primary">Категорий {{$count_categories}}</label></p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="jumbotron">
-                    <p><label class="btn btn-primary">Материалов 0</label></p>
+                    <p><label class="btn btn-primary">Материалов {{$count_products}}</label></p>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -29,26 +29,33 @@
 
         <div class="row">
                 <div class="card border-primary col-sm-6">
-                    <div class="card-header"><a class="btn btn-primary float-left" href="#" role="button">Создать категорию</a></div>
+                    <div class="card-header"><a class="btn btn-primary float-left" href="{{route('admin.category.create')}}" role="button">Создать категорию</a></div>
                     <div class="card-body text-primary">
-                        <a class="list-group-item" href="#">
-                            <h4 class="list-group-item-heading">Категория первая</h4>
-                            <p class="list-group-item-text">
-                                Кол-во материалов
-                            </p>
-                        </a>
+                        <ul class="list-group">
+                        @foreach($categories as $category)
+                                <a class="" href="{{route('admin.category.edit', $category)}}">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <h4 class="list-group-item-heading">{{$category->title}}</h4>
+                                        <span class="badge badge-primary badge-pill"> {{$category->products()->count()}}</span>
+                                    </li>
+                                 </a>
+                        @endforeach
+                        </ul>
                     </div>
                 </div>
 
                 <div class="card border-danger col-sm-6" >
-                    <div class="card-header"><a class="btn btn-danger float-right" href="#" role="button">Создать материал</a></div>
+                    <div class="card-header"><a class="btn btn-danger float-right" href="{{route('admin.category.create')}}" role="button">Создать материал</a></div>
                     <div class="card-body text-danger">
-                        <a class="list-group-item" href="#">
-                            <h4 class="list-group-item-heading">Материал первый</h4>
-                            <p class="list-group-item-text">
-                                Категория
-                            </p>
-                        </a>
+                            @foreach($products as $product)
+                                <a class="" href="{{route('admin.product.edit', $product)}}">
+                                    <blockquote class="blockquote mb-0">
+                                        <h4 class="list-group-item-heading">{{$product->title}}</h4>
+                                        <footer class="blockquote-footer"><span class="badge badge-primary badge-pill"> {{$product->categories()->pluck('title')->implode(', ')}}</span></footer>
+                                    </blockquote>
+
+                                </a>
+                            @endforeach
                     </div>
                 </div>
         </div>

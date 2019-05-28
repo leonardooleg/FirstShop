@@ -1,22 +1,22 @@
 @foreach ($categories as $category)
 
-    <option value="{{$category->id or ""}}"
+    <option value="{{$category->id ?? ""}}"
 
-            @isset($article->id)
-            @foreach ($article->categories as $category_article)
-            @if ($category->id == $category_article->id)
+            @isset($product->id)
+            @foreach ($product->categories as $category_product)
+            @if ($category->id == $category_product->id)
             selected="selected"
         @endif
         @endforeach
         @endisset
 
     >
-        {!! $delimiter or "" !!}{{$category->title or ""}}
+        {!! $delimiter ?? "" !!}{{$category->title ?? ""}}
     </option>
 
     @if (count($category->children) > 0)
 
-        @include('admin.articles.partials.categories', [
+        @include('admin.product.partials.categories', [
           'categories' => $category->children,
           'delimiter'  => ' - ' . $delimiter
         ])

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Product;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::with('children')->where('parent_id', 0)->get();
+        $categories = Category::with('children')->where('parent_id', NULL)->get();
         return view('admin.product.create', [
             'product'    => [],
             'categories' => $categories,
@@ -44,10 +44,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = Product::create($request->all());
-
-        //Category
-        if($request->input('categories')):
+        $product = new Product($request->all());
+        $product->save();
+        // Categories
+        if($request->input('categories')) :
             $product->categories()->attach($request->input('categories'));
         endif;
 
@@ -73,7 +73,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.product.edit', [
+            'product'    => $product,
+            'categories' => Category::with('children')->where('parent_id', NULL)->get(),
+            'delimiter'  => ''
+        ]);
     }
 
     /**
@@ -85,7 +89,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->except('slug'));
+
+        // Categories
+        $product->categories()->detach();
+        if($request->input('categories')) :
+            $product->categories()->attach($request->input('categories'));
+        endif;
+
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -96,6 +108,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->categories()->detach();
+        $product->delete();
+
+        return redirect()->route('admin.product.index');
     }
 }

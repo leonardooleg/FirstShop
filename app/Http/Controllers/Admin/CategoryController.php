@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Repositories\CategoryRepository;
 
 class CategoryController extends Controller
 {
@@ -20,7 +19,7 @@ class CategoryController extends Controller
         $list = Category::with('ancestors')->paginate(30);
         //$list = CategoryRepository::getAllWithPadinate(30);
         return view('admin.categories.index', [
-            'categories' => $list
+            'categories' => $list,
         ]);
     }
 
