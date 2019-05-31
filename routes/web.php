@@ -19,12 +19,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 Route::get('/','WelcomeController@index');
 
-#Route::get('product/{id}', 'ProductController@index');
-#Route::get('catalog/view/{id}', 'CategoryController@index');
+Route::get('product/{slug?}', 'ShopController@product')->name('product');
+Route::get('category/{slug?}', 'ShopController@category')->name('category');
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 

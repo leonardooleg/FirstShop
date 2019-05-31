@@ -6,7 +6,10 @@
  * Time: 19:34
  */
 ?>
-@extends('index', ['all_prints'=>$all_prints])
+@extends('layouts\app', ['all_prints'=>$all_prints])
+@section('title', $product->meta_title)
+@section('meta_keyword', $product->meta_keyword)
+@section('meta_description', $product->meta_description)
 @section('content')
 
     <!-- breadcrumbs -->
@@ -22,13 +25,17 @@
                                 <span itemprop="name">Главная</span>
                             </a>
                         </li>
-                        @foreach($category_url as $key => $value)
-                            <li class="product-breadcrumbs__list-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="/catalog/view/{{$key}}">
-                                    <span itemprop="name">{{$value}}</span>
-                                </a>
-                            </li>
-                        @endforeach
+
+                        // in view for breadcrumbs:
+
+
+                         @while($parent = $categories->parent)
+                        @section('breadcrumb')
+                            @parent
+                            <li>{{$parent->name}}</li>
+                        @stop
+                        @endwhile
+
                     </ul>
                 </div>
                 <div class="article col-md-2 col-xs-6">
@@ -110,8 +117,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden hidden-holder"><a class="fancyinline" rel="group" href="{{$product->img}}" data-pos="0"></a><a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_700.jpg" data-pos="1"></a><a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_700.jpg" data-pos="2"></a><a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_700.jpg" data-pos="3"></a></div>
-
+                            <div class="hidden hidden-holder"><a class="fancyinline" rel="group" href="{{$product->img}}" data-pos="0"></a>
+                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_700.jpg" data-pos="1"></a>
+                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_700.jpg" data-pos="2"></a>
+                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_700.jpg" data-pos="3"></a>
+                            </div>
+                            <p>{!! $product->description!!}</p>
                         </div>
                         <!--/ left side -->
 
@@ -121,7 +132,7 @@
                             <div class="product__info">
                                 <h1 class="product__info-model-name item_producttype_name">
                                     <div class="product__info-model" itemprop="model">
-                                        <span> <span class="product__info-model" itemprop="model">Мужская футболка 3D</span> <span class="product__info-name" itemprop="name">«{{$product->name}}»</span></span>
+                                        <span> <span class="product__info-model" itemprop="model">Мужская футболка 3D</span> <span class="product__info-name" itemprop="name">«{{$product->title}}»</span></span>
                                         <a class="product-info-icon info-link" href="#" data-toggle="modal" data-target="#colors_table"></a>
                                     </div>
                                  </h1>
