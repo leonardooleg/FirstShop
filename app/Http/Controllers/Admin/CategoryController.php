@@ -33,7 +33,7 @@ class CategoryController extends Controller
         global $categories2;
 
         $nodes = Category::get()->toTree();
-        $traverse = function ($categories, $prefix = '-') use (&$traverse) {
+        $traverse = function ($categories, $prefix = '') use (&$traverse) {
             global $categories2;
             foreach ($categories as $category) {
                 $categories2.=  '<option value="'.$category->id.'"> '.$prefix.' '.$category->title.' </option>';

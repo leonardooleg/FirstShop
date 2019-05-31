@@ -21,12 +21,15 @@ class ShopController extends Controller
 
     public function product($slug)
     {
-        $categories = Category::with('ancestors')->get();
+        $product=Product::where('slug',$slug)->first();
+        $categories = '';
+        //$categories = Category::ancestorsOf($id);
 
 
         $all_prints=DB::table('products')->count();
+        $categoryables=DB::table('categoryables')->where('categoryable_id',$product->id)->get();
         return view('shop.product',[
-            'product'=>Product::where('slug',$slug)->first(),
+            'product'=>$product,
             'categories'=> $categories,
             'all_prints'=>$all_prints
         ]);
