@@ -2,6 +2,9 @@
 @section('title', $category->title . " -Магазин")
 
 @section('content')
+
+    {{ Breadcrumbs::render('category', $category) }}
+
     @php
         $c=1;
     @endphp

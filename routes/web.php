@@ -17,13 +17,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('/product', 'ProductController', ['as'=>'admin']);
 });
 
-Route::get('/','WelcomeController@index');
+Route::get('/','WelcomeController@index')->name('welcome');
 
 Route::get('product/{slug?}', 'ShopController@product')->name('product');
 Route::get('category/{slug?}', 'ShopController@category')->name('category');
 
 
-
 Auth::routes();
 
+/**Image**/
+Route :: get ('image-upload', 'ImageUploadController @ imageUpload') -> name ('image.upload');
+Route :: post ('image-upload', 'ImageUploadController @ imageUploadPost') -> name ('image.upload.post');
 

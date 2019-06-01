@@ -25,16 +25,7 @@
                                 <span itemprop="name">Главная</span>
                             </a>
                         </li>
-
-                        // in view for breadcrumbs:
-
-
-                         @while($parent = $categories->parent)
-                        @section('breadcrumb')
-                            @parent
-                            <li>{{$parent->name}}</li>
-                        @stop
-                        @endwhile
+                        {{ Breadcrumbs::render('product', $product, $category ) }}
 
                     </ul>
                 </div>

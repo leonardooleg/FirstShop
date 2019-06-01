@@ -14,7 +14,7 @@ class ShopController extends Controller
         $category = Category::where('slug',$slug)->first();
         return view('shop.category',[
             'category'=>$category,
-            'products'=>$category->products()->where('published',1)->paginate(3),
+            'products'=>$category->products()->where('published',1)->paginate(12),
             'all_prints'=>$all_prints
         ]);
     }
@@ -22,16 +22,14 @@ class ShopController extends Controller
     public function product($slug)
     {
         $product=Product::where('slug',$slug)->first();
-        $categories = '';
-        //$categories = Category::ancestorsOf($id);
-
-
         $all_prints=DB::table('products')->count();
-        $categoryables=DB::table('categoryables')->where('categoryable_id',$product->id)->get();
+
+        $category = $product->categories()->pluck('slug')->last();
+        $category = Category::where('slug',$category)->first();
         return view('shop.product',[
             'product'=>$product,
-            'categories'=> $categories,
-            'all_prints'=>$all_prints
+            'all_prints'=>$all_prints,
+            'category'=>$category
         ]);
     }
 }
