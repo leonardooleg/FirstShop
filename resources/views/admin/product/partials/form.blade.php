@@ -36,7 +36,18 @@
 
 <label for="">Ключевые слова</label>
 <input type="text" class="form-control" name="meta_keyword" placeholder="Ключевые слова, через запятую" value="{{$product->meta_keyword ?? ""}}">
-
 <hr />
+<div class="form-group row">
+    <label for="image" class="col-md-4 col-form-label text-md-right">Product Image</label>
+    <div class="col-md-6">
+        <input id="image" type="file" class="form-control" name="image">
 
+            <code>{{ $product->image ?? ''}}</code>
+
+    </div>
+</div>
+@if (isset($product->image))
+    <img src="{{ asset($product->image) }}" style="width: 40px; height: 40px; border-radius: 50%;">
+@endif
+<hr />
 <input class="btn btn-primary" type="submit" value="Сохранить">
