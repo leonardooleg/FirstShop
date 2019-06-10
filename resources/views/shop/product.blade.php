@@ -15,19 +15,7 @@
     <!-- breadcrumbs -->
             <div class="product-top row">
                 <div class="product-breadcrumbs col-md-10 col-xs-6">
-                    <a class="force-back" href="/">
-                        <i class="fa fa-th-large"></i>
-                        Назад в&nbsp;каталог
-                    </a>
-                    <ul class="product-breadcrumbs__list hidden-xs hidden-sm" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                        <li class="product-breadcrumbs__list-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="/">
-                                <span itemprop="name">Главная</span>
-                            </a>
-                        </li>
-                        {{ Breadcrumbs::render('product', $product, $category ) }}
-
-                    </ul>
+                    {{ Breadcrumbs::render('product', $product, $category ) }}
                 </div>
                 <div class="article col-md-2 col-xs-6">
                     <span>Артикул: {{$product->id}}</span>
@@ -52,24 +40,16 @@
                                             <div class="swiper-wrapper" style="">
                                                 <div class="swiper-slide swiper-slide-active" data-image-id="" style="height: 75px; margin-bottom: 3px;">
                                                     <a href="#">
-                                                        <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_4_manshortfull_front_white_500.jpg" alt="" data-img-big="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_4_manshortfull_front_white_500.jpg" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
+                                                        <img src="{{$product->image ?? ''}}" alt="" data-img-big="{{$product->image ?? ''}}" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
                                                     </a>
                                                 </div>
-                                                <div class="swiper-slide swiper-slide-next" data-image-id="" style="height: 75px; margin-bottom: 3px;">
+                                                @foreach($next_images as $next_image)
+                                                <div class="swiper-slide swiper-slide-active" data-image-id="" style="height: 75px; margin-bottom: 3px;">
                                                     <a href="#">
-                                                        <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_500.jpg" alt="" data-img-big="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_500.jpg" data-pos="1" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
+                                                        <img src="{{$next_image ?? ''}}" alt="" data-img-big="{{$next_image ?? ''}}" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
                                                     </a>
                                                 </div>
-                                                <div class="swiper-slide" data-image-id="" style="height: 75px; margin-bottom: 3px;">
-                                                    <a href="#">
-                                                        <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_500.jpg" alt="" data-img-big="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_500.jpg" data-pos="2" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
-                                                    </a>
-                                                </div>
-                                                <div class="swiper-slide" data-image-id="" style="height: 75px; margin-bottom: 3px;">
-                                                    <a href="#">
-                                                        <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_500.jpg" alt="" data-img-big="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_500.jpg" data-pos="3" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
-                                                    </a>
-                                                </div>
+                                                @endforeach
                                             </div>
                                             <div class="swiper-vm-button-prev swiper-button-disabled"><i class="fa fa-angle-up"></i></div>
                                             <div class="swiper-vm-button-next swiper-button-disabled"><i class="fa fa-angle-down"></i></div>
@@ -83,7 +63,7 @@
                                         <img class="img-responsive" src="data:image/gif;base64,R0lGODlh9AH0AYAAAP///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5Q0RCRTRBRDAzNjcxMUU1QTZFMkQwOTYwRTQ5QUZCNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5Q0RCRTRBRTAzNjcxMUU1QTZFMkQwOTYwRTQ5QUZCNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlDREJFNEFCMDM2NzExRTVBNkUyRDA5NjBFNDlBRkI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjlDREJFNEFDMDM2NzExRTVBNkUyRDA5NjBFNDlBRkI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAPQB9AEAAv+Ej6nL7Q+jnLTai7PevPsPhuJIluaJpurKtu4Lx/JM1/aN5/rO9/4PDAqHxKLxiEwql8ym8wmNSqfUqvWKzWq33K73Cw6Lx+Sy+YxOq9fstvsNj8vn9Lr9js/r9/y+/w8YKDhIWGh4iJiouMjY6PgIGSk5SVlpeYmZqbnJ2en5CRoqOkpaanqKmqq6ytrq+gobKztLW2t7i5uru8vb6/sLHCw8TFxsfIycrLzM3Oz8DB0tPU1dbX2Nna29zd3t/Q0eLj5OXm5+jp6uvs7e7v4OHy8/T19vf4+fr7/P3+//DzCgwIEECxo8iDChwoUMGzp8CDGixIkUK1q8iDGjxo3/HDt6/AgypMiRJEuaPIkypcqVLFu6fAkzpsyZNGvavIkzp86dPHv6/Ak0qNChRIsaPYo0qdKlTJs6fQo1qtSpVKtavYo1q9atXLt6/Qo2rNixZMuaPYs2rdq1bNu6fQs3rty5dOvavYs3r969fPv6/Qs4sODBhAsbPow4seLFjBs7fgw5suTJlCtbvow5s+bNnDt7/gw6tOjRpEubPo06terVrFu7fg07tuzZtGvbvo07t+7dvHv7/g08uPDhxIsbP448ufLlzJs7fw49uvTp1Ktbv449u/bt3Lt7/w4+vPjx5MubP48+vfr17Nu7fw8/vvz59Ovbv48/v/79/Pv7/f8PYIACDkhggQYeiGCCCi7IYIMOPghhhBJOSGGFFl6IYYYabshhhx5+CGKIIo5IYokmnohiiiquyGKLLr4IY4wyzkhjjTbeiGOOOu7IY48+/ghkkEIOSWSRRh6JZJJKLslkk04+CWWUUk5JZZVWXollllpuyWWXXn4JZphijklmmWaeiWaaaq7JZptuvglnnHLOSWeddt6JZ5567slnn37+CWiggg5KaKGGHopoooouymijjj4KaaSSTkpppZZeimmmmm7KaaeefgpqqKKOSmqppp6Kaqqqrspqq66+Cmusss5Ka6223oprrrruymuvvv4KbLDCDktsscbGVgAAOw==">
                                         <div class="item-image hidden-xs">
                                             <a class="zoom" href="#">
-                                                <img src="{{$product->img}}" class="main-image" itemprop="image" title="Мужская футболка 3D Queen. Bohemian Rhapsody Фото 01">
+                                                <img src="{{$product->image}}" class="main-image" itemprop="image" title="Мужская футболка 3D Queen. Bohemian Rhapsody Фото 01">
                                                 <i class="sprite vm-pz"></i>
                                                 <i class="sprite vm-ct hidden"></i>
                                                 <i class="sprite vm-kc hidden"></i>
@@ -92,9 +72,9 @@
                                         <div class="preview-navigation visible-xs">
                                             <div id="owl-preview" class="owl-carousel owl-theme" style="opacity: 0; display: block;">
                                                 <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 800px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="{{$product->img}}" alt="">
+                                                                <img src="{{$product->image}}" alt="">
                                                             </div></div><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_500.jpg" alt="">
+                                                                <img src="{{$product->next_images ?? ''}}" alt="">
                                                             </div></div><div class="owl-item" style="width: 100px;"><div class="item">
                                                                 <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_500.jpg" alt="">
                                                             </div></div><div class="owl-item" style="width: 100px;"><div class="item">
@@ -108,8 +88,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden hidden-holder"><a class="fancyinline" rel="group" href="{{$product->img}}" data-pos="0"></a>
-                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_2_manshortfull_back_white_700.jpg" data-pos="1"></a>
+                            <div class="hidden hidden-holder"><a class="fancyinline" rel="group" href="{{$product->image}}" data-pos="0"></a>
+                                <a class="fancyinline" rel="group" href="{{$product->next_images ?? ''}}" data-pos="1"></a>
                                 <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_700.jpg" data-pos="2"></a>
                                 <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_700.jpg" data-pos="3"></a>
                             </div>

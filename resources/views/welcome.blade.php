@@ -72,17 +72,12 @@
                         </div>
 
                         <div class="span"></div>
+                    <div class="row">
 
-                        @php
-                        $c=1;
-                        @endphp
                         @foreach($products as $product)
-                            @if($c==1)
-                        <div class="card-group">
-                            @endif
-                                <div class="card col-3">
+                                <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12">
                                     <a href="{{route('product', $product->slug)}}">
-                                        <img class="card-img-top" data-src="{{$product->img}}" alt="100%x180" src="{{$product->img}}" data-holder-rendered="true" style="">
+                                        <img class="card-img-top" data-src="{{$product->image}}" alt="100%x180" src="{{$product->image}}" data-holder-rendered="true" style="">
                                         <div class="card-body">
                                             <h5 class="card-title"> {{$product->title}}</h5>
                                             <p class="card-text">{!! $product->description_short!!}</p>
@@ -91,18 +86,8 @@
                                     </a>
                                 </div>
 
-                            @if($c==4)
-                        </div>
-                        @endif
-                    @php
-                       if($c==4) $c=1;
-                        else $c++;
-                    @endphp
-                    @endforeach
-                    @php
-                        if($c==2) echo '</div>';
-
-                    @endphp
+                        @endforeach
+                    </div>
                         <div class="span"></div>
 
                         <button type="button" class="btn btn-primary btn-lg">Смотреть все</button>

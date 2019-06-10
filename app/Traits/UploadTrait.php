@@ -1,13 +1,16 @@
 <?php
 namespace App\Traits;
-use Illuminate\Http\UploadedFile;
 
 trait UploadTrait
 {
-    public function uploadOne(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null)
+    public function uploadImage($uploadedFile)
     {
-        $name = !is_null($filename) ? $filename : str_random(25);
-        $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
-        return $file;
+        $image_name = str_random(20);
+        $ext = $uploadedFile->getClientOriginalExtension();
+        $image_fullname = $image_name . '.' . $ext;
+        $upload_path = '/uploads/post/';
+        $image_url = $upload_path . $image_fullname;
+         $uploadedFile->move(public_path($upload_path), $image_fullname);
+        return $image_url;
     }
 }

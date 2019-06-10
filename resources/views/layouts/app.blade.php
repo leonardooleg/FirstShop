@@ -25,7 +25,10 @@
 <div  class="container">
     <header>
         <div id="one_head" class="row">
-            <div class="all-count col-md-6">{{$all_prints}} принтов в базе</div>
+
+                <div class="all-count col-md-6 ">@if (isset($all_prints)){{$all_prints }} принтов в базе@endif</div>
+
+
             <div class="zamanuha col-md-6">Иван С. из Москвы только-что заказал футболку Панда</div>
         </div>
         <div id="twoo_head" class="row">
@@ -62,12 +65,12 @@
     <content>
 
         <div class="body row">
-            <div class="col-2">
+            <div class="col-md-2 col-sm-12">
 
                 @include('layouts.leftMenu')
 
             </div>
-            <div class="col-10">
+            <div class="col-md-10 col-sm-12">
 
                 @yield('content')
 

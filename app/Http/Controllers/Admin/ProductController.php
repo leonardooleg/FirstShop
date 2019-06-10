@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 
 class ProductController extends Controller
 {
+    use UploadTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -57,29 +58,20 @@ class ProductController extends Controller
 
         $product = new Product($request->all());
 
-        // Check if a profile image has been uploaded
-        if ($request->has('image')) {
-            // Get image file
-            $image = $request->file('image');
-            // Make a image name based on user name and current timestamp
-            $name = str_slug($request->input('name')).'_'.time();
-            // Define folder path
-            $folder = '/uploads/images';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadOne($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $product->image = $filePath;
+        $image = $request->file('image');
+        if ($image){
+            $upload= uploadImage($image);
+            if ($upload['upload']){
+                $product->image = $upload['image_url'];
+            }
         }
-
         $product->save();
         // Categories
         if($request->input('categories')) :
             $product->categories()->attach($request->input('categories'));
         endif;
 
-        return redirect()->back()->with(['status' => 'Profile updated successfully.']);
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -101,10 +93,14 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        if($product->next_images) $next_images = json_decode($product->next_images, true);
+        else  $next_images='';
+
         return view('admin.product.edit', [
             'product'    => $product,
             'categories' => Category::with('children')->where('parent_id', NULL)->get(),
-            'delimiter'  => ''
+            'delimiter'  => '',
+            'next_images'  => $next_images
         ]);
     }
 
@@ -118,30 +114,27 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->except('slug'));
-
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $name = str_slug($request->title).'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/products');
-            $imagePath = $destinationPath. "/".  $name;
-            $image->move($destinationPath, $name);
-            $product->image = $name;
+        $product = Product::find($product->id);
+        $image = $request->file('image');
+        if ($image){
+            $product->image=  $this->uploadImage($image);
+        }
+       $next_images = $request->file('next_images');
+        if($next_images){
+            foreach($request->file('next_images') as $file){
+                $data[] =$this->uploadImage($file);
+            }
+            $product->next_images=json_encode($data);
         }
 
-
+        $product->save();
         // Categories
         $product->categories()->detach();
         if($request->input('categories')) :
             $product->categories()->attach($request->input('categories'));
         endif;
 
-        return redirect()->route('admin.product.index');
+        return back()->with('success', 'Your article has been added successfully. Please wait for the admin to approve.');
     }
 
     /**
@@ -156,11 +149,5 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('admin.product.index');
-    }
-    public function uploadOne(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null)
-    {
-        $name = !is_null($filename) ? $filename : str_random(25);
-        $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
-        return $file;
     }
 }

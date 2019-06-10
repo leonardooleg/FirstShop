@@ -26,5 +26,4 @@
                 <input class="btn btn-danger float-right" type="submit" value="Удалить">
             </form>
     </div>
-
 @endsection
