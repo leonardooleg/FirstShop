@@ -10,7 +10,7 @@
                         @foreach($products as $product)
                             <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12">
                                 <a href="{{route('product', $product->slug)}}">
-                                    <img class="card-img-top" data-src="{{$product->image}}" alt="100%x180" src="{{$product->image}}" data-holder-rendered="true" style="">
+                                    <img class="card-img-top" data-src="{{asset('/storage/'. $product->image) }}" alt="100%x180" src="{{asset('/storage/'. $product->image) }}" data-holder-rendered="true" style="">
                                     <div class="card-body">
                                         <h5 class="card-title"> {{$product->title}}</h5>
                                         <p class="card-text">{!! $product->description_short !!}</p>

@@ -27,11 +27,24 @@ class ShopController extends Controller
         $category = $product->categories()->pluck('slug')->last();
         $category = Category::where('slug',$category)->first();
         $next_images = json_decode($product->next_images, true);
+
         return view('shop.product',[
             'product'=>$product,
             'all_prints'=>$all_prints,
             'category'=>$category,
             'next_images'=>$next_images
+        ]);
+    }
+
+    public function constructor()
+    {
+
+        $all_prints=DB::table('products')->count();
+
+
+
+        return view('shop.constructor',[
+            'all_prints'=>$all_prints,
         ]);
     }
 }

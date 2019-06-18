@@ -32,7 +32,7 @@
     <div class="row no-gutters">
         <div class="col-md-1">
             @if (isset($product->image))
-                <img  class="card-img" src="{{ $product->image }}">
+                <img  class="card-img" src="{{asset('/storage/'. $product->image) }}">
             @endif
         </div>
         <div class="col-md-11">
@@ -60,7 +60,7 @@
             <div class="row no-gutters">
                 <div class="col-md-1">
                     @if (isset($next_image))
-                        <img  class="card-img" src="{{ $next_image }}">
+                        <img  class="card-img" src="{{asset('/storage/'. $next_image) }}">
                     @endif
                 </div>
                 <div class="col-md-11">

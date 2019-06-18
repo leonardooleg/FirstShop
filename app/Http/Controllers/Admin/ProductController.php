@@ -5,12 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
-use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    use UploadTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -46,7 +44,7 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Traits\UploadTrait uploadOne
+     * @param  App\Traits\UploadTrait\uploadImage uploadOne
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,11 +58,19 @@ class ProductController extends Controller
 
         $image = $request->file('image');
         if ($image){
-            $upload= uploadImage($image);
-            if ($upload['upload']){
-                $product->image = $upload['image_url'];
+            $upload=$request->file('image')->store('uploads/product', 'public');
+             if ($upload){
+                 $product->image = $upload;
+             }
+         }
+        $next_images = $request->file('next_images');
+        if($next_images){
+            foreach($request->file('next_images') as $file){
+                $data[] =$file->store('uploads/product', 'public');
             }
+            $product->next_images=json_encode($data);
         }
+
         $product->save();
         // Categories
         if($request->input('categories')) :
@@ -117,12 +123,15 @@ class ProductController extends Controller
         $product = Product::find($product->id);
         $image = $request->file('image');
         if ($image){
-            $product->image=  $this->uploadImage($image);
+            $upload=$request->file('image')->store('uploads/product', 'public');
+            if ($upload){
+                $product->image = $upload;
+            }
         }
-       $next_images = $request->file('next_images');
+        $next_images = $request->file('next_images');
         if($next_images){
             foreach($request->file('next_images') as $file){
-                $data[] =$this->uploadImage($file);
+                $data[] =$file->store('uploads/product', 'public');
             }
             $product->next_images=json_encode($data);
         }

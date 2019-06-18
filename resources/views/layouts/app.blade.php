@@ -49,7 +49,7 @@
         </div>
         <div id="tree_head" class="row">
             <div class="col-3">
-                <a href="#"><img width="200px" src="/img/svoy_design.png"></a>
+                <a href="/constructor"><img width="200px" src="/img/svoy_design.png"></a>
             </div>
             <div class="col-6">
                 <form class="form-inline my-2 my-lg-0">

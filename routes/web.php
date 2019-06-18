@@ -13,6 +13,7 @@
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth'] ], function () {
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+    Route::get('/data-chart', 'DashboardController@chartData')->name('admin.chart_data');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/product', 'ProductController', ['as'=>'admin']);
     Route::group(['prefix' => 'user_managment', 'namespace' => 'UserManagment' ], function () {
@@ -24,6 +25,8 @@ Route::get('/','WelcomeController@index')->name('welcome');
 
 Route::get('product/{slug?}', 'ShopController@product')->name('product');
 Route::get('category/{slug?}', 'ShopController@category')->name('category');
+
+Route::get('constructor', 'ShopController@constructor')->name('constructor');
 
 
 Auth::routes();
