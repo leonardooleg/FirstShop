@@ -297,7 +297,7 @@ a {
 }
 .product__image .item-image {
     left: 0;
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     text-align: center;
     top: 0;
@@ -307,7 +307,7 @@ a {
 }
 .product__image .item-image img {
     max-width: 100%;
-    z-index: 3;
+    z-index: 0;
     color: #fff;
     padding-bottom: 10px;
 }
@@ -829,3 +829,58 @@ blockquote.blockquote.mb-0 {
 /*Админка дашбоард*/
 
 /***Админка***/
+
+/***Конструктор***/
+/*.preview.Frame .image, .preview.Frame .edit-zone {
+    !*top: 19%;
+    right: 25%;
+    width: 50%;
+    padding-bottom: 62.5%;*!
+    height: 450px;
+}
+.preview .image, .preview .edit-zone {
+    !*position: absolute;
+    height: 0;*!
+    background-color: #f4f4f4;
+}
+.background {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.windows-loader .spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+    animation: windowsRotate 1.4s infinite ease-in-out, windowsBackground 1.4s infinite ease-in-out alternate;
+}
+.edit-zone img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: move;
+    transform-origin: 0 0;
+}
+*/
+.construct .product__image-preview{
+    position: absolute;
+    bottom: 10px;
+}
+.construct .product__image-preview #swiper-thumbnails .swiper-vm-button-next, .product__image-preview #swiper-thumbnails .swiper-vm-button-prev{
+    background-color: unset!important;
+}
+.edit-zone.windows-loader {
+    height: 500px;
+}
+/***Конструктор***/

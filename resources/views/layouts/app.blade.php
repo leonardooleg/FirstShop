@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/shop.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div  class="container">
@@ -103,6 +103,6 @@
         </div>
     </footer>
 </div>
-
+<script type="text/javascript" src="/construct/dist/main.js"></script>
 </body>
 </html>

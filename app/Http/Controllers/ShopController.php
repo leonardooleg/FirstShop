@@ -40,10 +40,15 @@ class ShopController extends Controller
     {
 
         $all_prints=DB::table('products')->count();
-
-
-
         return view('shop.constructor',[
+            'all_prints'=>$all_prints,
+        ]);
+    }
+    public function constructor2()
+    {
+
+        $all_prints=DB::table('products')->count();
+        return view('shop.constructor2',[
             'all_prints'=>$all_prints,
         ]);
     }

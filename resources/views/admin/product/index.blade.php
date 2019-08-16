@@ -7,7 +7,7 @@
         @component('admin.components.breadcrumb')
             @slot('title') Список Товаров @endslot
             @slot('parent') Главная @endslot
-            @slot('active') Категории @endslot
+            @slot('active') -Продукты @endslot
         @endcomponent
 
         <hr>

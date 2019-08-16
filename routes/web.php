@@ -27,7 +27,10 @@ Route::get('product/{slug?}', 'ShopController@product')->name('product');
 Route::get('category/{slug?}', 'ShopController@category')->name('category');
 
 Route::get('constructor', 'ShopController@constructor')->name('constructor');
+Route::get('constructor2', 'ShopController@constructor2')->name('constructor2');
 
-
+Route::get('html/productdesigner.html', function () {
+    return redirect('/designer/html/productdesigner.html');
+});
 Auth::routes();
 

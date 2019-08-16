@@ -7,23 +7,21 @@
  */
 ?>
 @extends('layouts\app', ['all_prints'=>$all_prints])
-@section('title', $product->meta_title)
-@section('meta_keyword', $product->meta_keyword)
-@section('meta_description', $product->meta_description)
+@section('title', 'Конструктор одежды и футболок онлайн - печать на вещах своих принтов, логотипов, дизайнов')
+@section('meta_keyword', 'конструктор одежды онлайн, печать на вещах')
+@section('meta_description', 'Конструктор одежды и футболок: нанесение принта или логотипа на футболку. Печать на одежде на заказ по выгодным ценам, с доставкой по Москве и России.')
 @section('content')
 
     <!-- breadcrumbs -->
-            <div class="product-top row">
-                <div class="product-breadcrumbs col-md-10 col-xs-6">
-                    {{ Breadcrumbs::render('product', $product, $category ) }}
-                </div>
-                <div class="article col-md-2 col-xs-6">
-                    <span>Артикул: {{$product->id}}</span>
-                </div>
-            </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Конструктор одежды онлайн 2</li>
+        </ol>
+    </nav>
     <!-- breadcrumbs -->
     <!-- Product -->
-    <section class="product" itemscope="" itemtype="http://schema.org/Product">
+    <section class="product construct" itemscope="" itemtype="http://schema.org/Product">
         <div class="">
             <div class="">
                 <!-- main content -->
@@ -33,71 +31,53 @@
                         <!-- left side -->
                         <div class="col-md-7" id="product_images">
                             <div class="row">
-                                <div class="col-sm-2 hidden-xs ">
 
-                                    <div class="product__image-preview">
-                                        <div class="swiper-container swiper-container-vertical" id="swiper-thumbnails">
-                                            <div class="swiper-wrapper" style="">
-                                                <div class="swiper-slide swiper-slide-active" data-image-id="" style="height: 75px; margin-bottom: 3px;">
-                                                    <a href="#">
-                                                        <img src="{{asset('/storage/'. $product->image ?? '') }}" alt="" data-img-big="{{asset('/storage/'. $product->image ?? '') }}" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
-                                                    </a>
-                                                </div>
-                                                @if (isset($next_images))
-
-
-                                                    @foreach($next_images as $next_image)
-                                                    <div class="swiper-slide swiper-slide-active" data-image-id="" style="height: 75px; margin-bottom: 3px;">
-                                                        <a href="#">
-                                                            <img src="{{asset('/storage/'. $next_image ?? '') }}" alt="" data-img-big="{{asset('/storage/'. $next_image ?? '') }}" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
-                                                        </a>
-                                                    </div>
-                                                    @endforeach
-                                                @endif
-                                            </div>
-                                            <div class="swiper-vm-button-prev swiper-button-disabled"><i class="fa fa-angle-up"></i></div>
-                                            <div class="swiper-vm-button-next swiper-button-disabled"><i class="fa fa-angle-down"></i></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     <div class="product__image preview">
+                                        <div class="item-image hidden-xs preview Frame">
 
-                                        <div class="item-image hidden-xs">
-                                            <a class="zoom" href="#">
-                                                <img src="{{asset('/storage/'. $product->image) }}" class="main-image" itemprop="image" title="Мужская футболка 3D Queen. Bohemian Rhapsody Фото 01">
+                                            <div class="product__image-preview">
+                                                <div class="swiper-container swiper-container-vertical" id="swiper-thumbnails">
+                                                    <div class="swiper-wrapper" style="">
+                                                        <div class="swiper-slide swiper-slide-active" data-image-id="" style="height: 75px; margin-bottom: 3px;">
+                                                            <a href="#">
+                                                                <img src="/storage/uploads/construct/one.png" alt="" data-img-big="" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
+                                                            </a>
+                                                        </div>
+                                                        <div class="swiper-slide swiper-slide" data-image-id="" style="height: 75px; margin-bottom: 3px;">
+                                                            <a href="#">
+                                                                <img src="/storage/uploads/construct/twoo.png" alt="" data-img-big="" data-pos="0" onload="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker, [event, 'loaded'])}" onerror="if(window.img_tracker){window.img_tracker.track.apply(window.img_tracker,[event, 'failed'])}">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-vm-button-prev swiper-button-disabled"><i class="fa fa-angle-up"></i></div>
+                                                    <div class="swiper-vm-button-next swiper-button-disabled"><i class="fa fa-angle-down"></i></div>
+                                                </div>
+                                            </div>
+
+                                                <div>
+                                                    <div class="edit-zone windows-loader">
+                                                        <!---Construct2-->
+                                                        <div id="app"></div>
+                                                        <!---Construct2-->
+                                                    </div>
+
+                                                </div>
                                                 <i class="sprite vm-pz"></i>
                                                 <i class="sprite vm-ct hidden"></i>
                                                 <i class="sprite vm-kc hidden"></i>
-                                            </a>
+
                                         </div>
-                                        <div class="preview-navigation visible-xs">
-                                            <div id="owl-preview" class="owl-carousel owl-theme" style="opacity: 0; display: block;">
-                                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 800px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="{{asset('/storage/'. $product->image) }}" alt="">
-                                                            </div></div><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="{{asset('/storage/'. $product->next_image ?? '') }}" alt="">
-                                                            </div></div><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_500.jpg" alt="">
-                                                            </div></div><div class="owl-item" style="width: 100px;"><div class="item">
-                                                                <img src="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_500.jpg" alt="">
-                                                            </div></div></div></div>
 
 
-
-                                                <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active" style="width: 619.333px;"><span class=""></span></div><div class="owl-page" style="width: 619.333px;"><span class=""></span></div><div class="owl-page" style="width: 619.333px;"><span class=""></span></div><div class="owl-page" style="width: 619.333px;"><span class=""></span></div></div><div class="owl-buttons"><div class="owl-prev disabled"><i class="fa fa-angle-left"></i></div><div class="owl-next"><i class="fa fa-angle-right"></i></div></div></div></div></div>
-                                        <a class="to-favorites hidden-lg hidden-md" style="display: inline;"><span class="fa fa-heart-o"></span></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="hidden hidden-holder"><a class="fancyinline" rel="group" href="{{asset('/storage/'. $product->image) }}" data-pos="0"></a>
-                                <a class="fancyinline" rel="group" href="{{asset('/storage/'. $product->next_image ?? '') }}" data-pos="1"></a>
-                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_front_white_700.jpg" data-pos="2"></a>
-                                <a class="fancyinline" rel="group" href="https://storage.vsemayki.ru/images/0/1/1645/1645487/previews/people_3_manshortfull_back_white_700.jpg" data-pos="3"></a>
-                            </div>
-                            <p>{!! $product->description!!}</p>
+
+                            <p>
+                                Онлайн-конструктор одежды – сам себе дизайнер!
+                                Как часто вам доводилось бродить по магазинам одежды в поисках вещей, для задуманного образа? Каждый хотя бы раз в жизни сталкивался с такой проблемой. Теперь вы можете заказать любую одежду со своим принтом не выходя из дома! С помощью удобного конструктора легко и просто создать оригинальный образ, и сразу наглядно увидеть как всё это будет выглядеть.
+                            </p>
                         </div>
                         <!--/ left side -->
 
@@ -107,7 +87,7 @@
                             <div class="product__info">
                                 <h1 class="product__info-model-name item_producttype_name">
                                     <div class="product__info-model" itemprop="model">
-                                        <span> <span class="product__info-model" itemprop="model">Мужская футболка 3D</span> <span class="product__info-name" itemprop="name">«{{$product->title}}»</span></span>
+                                        <span> <span class="product__info-model" itemprop="model">Мужская футболка 3D</span> <span class="product__info-name" itemprop="name">«»</span></span>
                                         <a class="product-info-icon info-link" href="#" data-toggle="modal" data-target="#colors_table"></a>
                                     </div>
                                  </h1>

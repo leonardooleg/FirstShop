@@ -1,3 +1,5 @@
-<nav class="nav flex-column">
+<ul class="list-group list-group-flush">
     @include('layouts.leftMenuHead', ['categories' => $categories, 'delimiter'  => ''])
-</nav>
+
+</ul>
+
