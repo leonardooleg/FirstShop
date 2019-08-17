@@ -18,7 +18,9 @@ class DashboardController extends Controller
             'categories'=>Category::lastCategories(5),
             'products'=>Product::lastProducts(5),
             'count_categories'=>Category::count(),
-            'count_products'=>Product::count()
+            'count_products'=>Product::count(),
+            'user'=>\Auth::user()->name
+
         ]);
     }
     //График

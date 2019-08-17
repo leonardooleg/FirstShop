@@ -44,6 +44,7 @@
                     stageWidth: 1200,
                     editorMode: false,
                     smartGuides: true,
+                    zChangeable : true,
                     fonts: [
                         {name: 'Helvetica'},
                         {name: 'Times New Roman'},
@@ -58,24 +59,39 @@
                         draggable: true,
                         rotatable: true,
                         autoCenter: true,
-                        boundingBox: "Base"
+                        boundingBoxMode: "clipping",
+                        boundingBox:{
+                            x: 440,
+                            y: 200,
+                            height: 230,
+                            width: 170,
+                        }
+
                     },
                     customImageParameters: {
+                        topped: true,
                         draggable: true,
                         removable: true,
                         resizable: true,
                         rotatable: true,
                         colors: '#000',
                         autoCenter: true,
-                        boundingBox: "inside",
-                        width: 200,
-                        height: 200
+                        boundingBoxMode: "clipping",
+                        boundingBox:{
+                            x: 440,
+                            y: 200,
+                            height: 230,
+                            width: 170,
+                        }
+                        /*resizeToW: 600,
+                        resizeToH: 600,
+                        scaleMode: "cover",
+                        scale: 0.5,*/
                     },
                     actions:  {
-                        'top': ['download','print', 'snap', 'preview-lightbox'],
                         'right': ['magnify-glass', 'zoom', 'reset-product', 'qr-code', 'ruler'],
                         'bottom': ['undo','redo'],
-                        'left': ['manage-layers','info','save','load']
+                        'left': ['download','print', 'snap', 'preview-lightbox']
                     }
                 },
 
@@ -217,9 +233,7 @@
                                                                             <a href="#" id="checkout-button" class="fpd-btn">Проверить</a>
                                                                             <a href="#" id="recreation-button" class="fpd-btn">Пересоздать</a>
                                                                         </div>
-                                                                        <div class="fpd-right">
-                                                                            <span class="price badge badge-inverse"><span id="thsirt-price"></span> $</span>
-                                                                        </div>
+
                                                                     </div>
 
                                                                     <p class="fpd-container" style="display: none">
@@ -261,7 +275,9 @@
                                                 <div class="alert alert-warning not-available" style="display: none;"></div>
                                                 <div class="product-price" id="product_price" data-autotest-id="price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
                                                     <div class="product-price__amount" itemprop="price" data-autotest-id="actual_price">
-                                                        <span>1125</span>&nbsp;<i class="fas fa-ruble-sign"></i>
+                                                        <div class="fpd-right">
+                                                            <span class="price badge badge-inverse"><span id="thsirt-price"></span> $</span>
+                                                        </div><i class="fas fa-ruble-sign"></i>
                                                     </div>
                                                     <meta itemprop="priceCurrency" content="RUB">
                                                     <link itemprop="availability" href="https://schema.org/InStock">
