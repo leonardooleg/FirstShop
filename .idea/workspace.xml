@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="починаю редактор">
-      <change afterPath="$PROJECT_DIR$/resources/views/shop/constructor2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WishListController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/DBStorage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/DatabaseStorageModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/vues.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/footerCart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/shop/cardProduct.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/95965f27-f0b6-4272-9355-3b323a5bddc4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/95965f27-f0b6-4272-9355-3b323a5bddc4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/leonardooleg.club.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leonardooleg.club.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/leftMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/leftMenu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/leftMenuHead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/leftMenuHead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/constructor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/constructor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/constructor2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/constructor2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +88,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -74,6 +98,11 @@
         <option name="argument" value="--tags" />
         <option name="title" value="All" />
       </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
@@ -192,6 +221,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/darryldecode/cart" />
     </include_path>
   </component>
   <component name="ProjectId" id="1MxSWoN69gaJNA4WlLrokRXUBF1" />
@@ -208,7 +238,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/shop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -219,14 +250,20 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views\shop" />
-      <recent name="C:\OSPanel\domains\leonardooleg.club\resources\js\components" />
-      <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views\admin\user_managment\users" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views\layouts" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\public\js" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\app\Models" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\app\Http\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\leonardooleg.club\app\Models" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\app" />
+      <recent name="C:\OSPanel\domains\leonardooleg.club\app\Http" />
       <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views\admin\user_managment" />
       <recent name="C:\OSPanel\domains\leonardooleg.club\resources\views\shop" />
     </key>
@@ -357,6 +394,45 @@
       <workItem from="1565865749055" duration="16082000" />
       <workItem from="1565913376710" duration="43000" />
       <workItem from="1565956582336" duration="1740000" />
+      <workItem from="1566159788626" duration="1374000" />
+      <workItem from="1566229127806" duration="166000" />
+      <workItem from="1566241962703" duration="7520000" />
+      <workItem from="1566389262002" duration="626000" />
+      <workItem from="1566401153059" duration="6654000" />
+      <workItem from="1566484758599" duration="5704000" />
+      <workItem from="1566507899550" duration="470000" />
+      <workItem from="1566508501055" duration="195000" />
+      <workItem from="1566508715675" duration="30000" />
+      <workItem from="1566508762189" duration="1085000" />
+      <workItem from="1566512699964" duration="4343000" />
+      <workItem from="1566579892929" duration="1867000" />
+      <workItem from="1566588528346" duration="19000" />
+      <workItem from="1566588564752" duration="3420000" />
+      <workItem from="1566594991346" duration="2784000" />
+      <workItem from="1566653465725" duration="685000" />
+      <workItem from="1566654782487" duration="184000" />
+      <workItem from="1566654993316" duration="5804000" />
+      <workItem from="1566731374539" duration="10244000" />
+      <workItem from="1566855859635" duration="608000" />
+      <workItem from="1566919638285" duration="3622000" />
+      <workItem from="1567026855252" duration="591000" />
+      <workItem from="1567085689599" duration="15011000" />
+      <workItem from="1567168513553" duration="3355000" />
+      <workItem from="1567177935732" duration="18457000" />
+      <workItem from="1567242256959" duration="7136000" />
+      <workItem from="1567281758964" duration="1696000" />
+      <workItem from="1567339184165" duration="1205000" />
+      <workItem from="1567364729856" duration="3450000" />
+      <workItem from="1567428374109" duration="8014000" />
+      <workItem from="1567509254604" duration="4501000" />
+      <workItem from="1567526121887" duration="11731000" />
+      <workItem from="1567599565826" duration="14412000" />
+      <workItem from="1567697063412" duration="13639000" />
+      <workItem from="1567773048708" duration="14583000" />
+      <workItem from="1567847500525" duration="8142000" />
+      <workItem from="1567888483748" duration="307000" />
+      <workItem from="1567889988404" duration="4411000" />
+      <workItem from="1567897255857" duration="2175000" />
     </task>
     <task id="LOCAL-00001" summary="переустановка заново">
       <created>1557416268420</created>
@@ -508,11 +584,6 @@
     <option name="localTasksCounter" value="22" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="phpunit_xml - 2019.05.27 at 01h 10m 57s.xml">
-      <configuration name="phpunit.xml" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -582,67 +653,33 @@
           <line>4</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Models/DatabaseStorageModel.php</url>
+          <line>15</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php</url>
+          <line>30</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ShopController.php</url>
+          <line>44</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
-        <watch expression=" $product-&gt;image" language="PHP" />
+        <watch expression=" $product-&gt;slug" language="PHP" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>$product-&gt;id</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;image</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Product::where('slug',$slug)-&gt;categories()</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories()</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;id)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;categoryable)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;category_id)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;category)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;categories)</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>$product-&gt;categories($product-&gt;categories())</expression-string>
-        <language-id>PHP</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
   <component name="masterDetails">
     <states>

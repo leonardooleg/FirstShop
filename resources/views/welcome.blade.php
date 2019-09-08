@@ -1,98 +1,261 @@
 @extends('layouts\app', ['all_prints'=>$all_prints])
 @section('content')
 
-                    <div class="bd-example">
-                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-                                <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item carousel-item-next carousel-item-left">
-                                    <img class="d-block w-100" data-src="holder.js/400x200?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [400x200]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166eaf5be6c%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166eaf5be6c%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22217.7%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>First slide label</h5>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                    </div>
+
+
+<div class="body">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+
+                @include('layouts.leftMenu')
+
+            </div>
+            <div class="col-md-9 col-sm-12">
+
+                 <!---->
+
+                <div class="bd-example">
+
+                                <img class="d-block w-100"  src="/img/UppBanner.png" data-holder-rendered="true">
+
+                </div>
+                <div class="span"></div>
+                <div class="welcom-content">
+                    <div class="row">
+                        <div class="col-4 lightning">
+                            <h5> <img src="/icon/lightning.png"> Хиты сезона </h5>
+                        </div>
+
+                        <div class="col-8 filter">
+<div style="float: right">
+                            <div class="btn-group" role="group" >
+                                <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="/icon/shirt.png" style="float: left"> Вид одежды<br>
+                                    Футболка, свитшот, итд
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                    <a class="dropdown-item" href="#">Футболка</a>
+                                    <a class="dropdown-item" href="#">Свитшот</a>
+                                    <a class="dropdown-item" href="#">Майка</a>
                                 </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" data-src="holder.js/400x200?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [400x200]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166eaf5be6e%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166eaf5be6e%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22217.7%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Second slide label</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
                                 </div>
-                                <div class="carousel-item active carousel-item-left">
-                                    <img class="d-block w-100" data-src="holder.js/400x200?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [400x200]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166eaf5be6f%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166eaf5be6f%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22217.7%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Third slide label</h5>
-                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                    </div>
+                            <div class="btn-group" role="group" >
+                                <button class="btn btn-light btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="/icon/sex.png" style="float: left"> Пол<br>
+                                    Муж./Жен./Мальч./Девоч.
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#">Мужчина</a>
+                                    <a class="dropdown-item" href="#">Женщина</a>
+                                    <a class="dropdown-item" href="#">Мальчик</a>
+                                    <a class="dropdown-item" href="#">Девочка</a>
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+</div>
                         </div>
                     </div>
-                        <div class="span"></div>
 
-                        <div class="row">
-                            <div class="col-4">
-                                <button type="button" class="btn btn-primary btn-lg btn-block">Заголовок раздела</button>
-                            </div>
-                            <div class="col-4">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Вид одежды
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Меню пол
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="span"></div>
+                    <div class="span"></div>
                     <div class="row">
 
                         @foreach($products as $product)
-                                <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                                    <a href="{{route('product', $product->slug)}}">
-                                        <img class="card-img-top" data-src="{{asset('/storage/'. $product->image) }}" alt="100%x180" src="{{asset('/storage/'. $product->image) }}" data-holder-rendered="true" style="">
-                                        <div class="card-body">
-                                            <h5 class="card-title"> {{$product->title}}</h5>
-                                            <p class="card-text">{!! $product->description_short!!}</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </a>
-                                </div>
-
+                            @include('shop.cardProduct', $product )
                         @endforeach
                     </div>
-                        <div class="span"></div>
+                    <div class="row">
+                        <div class="col-md-12 see-oll">
+                            <a href="/all"><button type="button" class="btn btn-warning">Смотреть все</button> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span"></div>
 
-                        <button type="button" class="btn btn-primary btn-lg">Смотреть все</button>
 
-                        <div class="span"></div>
+
+                <div class="span"></div>
+
+                 <!---->
+
+            </div>
+        </div>
+        <div class="container welcom-content">
+            <div class="row">
+
+            </div>
+        </div>
+
+        <div class="container welcom-content">
+            <div class="row">
+
+            </div>
+        </div>
+
+        <div class="container welcom-top-1">
+            <div class="row">
+                <div class="card text-white col-md-4">
+                    <img src="http://leonardooleg.club/storage/uploads/product/new_year.png" class="card-img" alt="...">
+                    <img class="welcome_sloy" src="/img/welcome_sloy.png">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Раздел: Новый год</h5>
+                    </div>
+                </div>
+                <div class="card  text-white col-md-4">
+                    <img src="http://leonardooleg.club/storage/uploads/product/new_year.png" class="card-img" alt="...">
+                    <img class="welcome_sloy" src="/img/welcome_sloy.png">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Раздел: Новый год</h5>
+                    </div>
+                </div>
+                <div class="card  text-white col-md-4">
+                    <img src="http://leonardooleg.club/storage/uploads/product/new_year.png" class="card-img" alt="...">
+                    <img class="welcome_sloy" src="/img/welcome_sloy.png">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Раздел: Новый год</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class=" ">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Большой</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Баннер навигации</text></svg>
+    </div>
+
+    <div class="container welcom-top-1">
+        <div class="row">
+            <div class="card text-white col-md-6">
+                <img src="http://leonardooleg.club/storage/uploads/product/footbol.png" class="card-img" alt="...">
+                <img class="welcome_sloy" src="/img/welcome_sloy.png">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Раздел: Футбол</h5>
+                </div>
+            </div>
+            <div class="card text-white col-md-6">
+                <img src="http://leonardooleg.club/storage/uploads/product/footbol.png" class="card-img" alt="...">
+                <img class="welcome_sloy" src="/img/welcome_sloy.png">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Раздел: Футбол</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container welcom-content">
+        <div class="row" >
+            <div style="text-align: center; margin: 0 auto">
+                <b>Достоинства магазина или «как просто купить»</b><br>
+            Блок на доверие.<br><br>
+
+            Базово:<br><br>
+
+            Принты от тысяч дизайнеров<br>
+            1 00 000 счастливых клиентов<br>
+            Только качественные и безопасные материалы<br>
+            Быстрая доставка<br>
+            Бесплатный обмен и возврат
+            </div>
+        </div>
+    </div>
+
+    <div class="container welcom-content bought">
+        <h5 class="name_block"> Уже купили</h5>
+        <div class="row">
+
+            <div class="card col-md-4">
+                <div class="card-body">
+                    <div class="media">
+                        <img src="/icon/avatar_mini.png" alt="..." class="rounded-circle mr-3">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Александр Иванов</h5><div class="text">21.08.2019</div>
+                        </div>
+                    </div>
+                    <p class="card-text"><quotes>«</quotes><br>Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. <br><quotes>»</quotes></p>
+                </div>
+            </div>
+            <div class="card col-md-4">
+                <div class="card-body">
+                    <div class="media">
+                        <img src="/icon/avatar_mini.png" alt="..." class="rounded-circle mr-3">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Александр Иванов</h5><div class="text">21.08.2019</div>
+                        </div>
+                    </div>
+                    <p class="card-text"><quotes>«</quotes><br>Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. <br><quotes>»</quotes></p>
+                </div>
+            </div><div class="card col-md-4">
+                <div class="card-body">
+                    <div class="media">
+                        <img src="/icon/avatar_mini.png" alt="..." class="rounded-circle mr-3">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Александр Иванов</h5><div class="text">21.08.2019</div>
+                        </div>
+                    </div>
+                    <p class="card-text"><quotes>«</quotes><br>Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо текст отзыва. Демо отзыв текста. Демо отзыв текста.
+                        Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. Демо отзыв текста. <br><quotes>»</quotes></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container welcom-content">
+        <div class="row">
+
+
+
+            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+                <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                    <div class="carousel-item col-md-3 active">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/1.png" alt="slide 1">
+                    </div>
+                    <div class="carousel-item col-md-3">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/2.png" alt="slide 2">
+                    </div>
+                    <div class="carousel-item col-md-3">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/3.png" alt="slide 3">
+                    </div>
+                    <div class="carousel-item col-md-3">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/4.png" alt="slide 4">
+                    </div>
+                    <div class="carousel-item col-md-3">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/5.png" alt="slide 5">
+                    </div>
+                    <div class="carousel-item col-md-3">
+                        <img class="img-fluid mx-auto d-block" src="/img/addpeople/6.png" alt="slide 6">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="container welcom-content">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+    @include('layouts.footer')
 
 
 @endsection

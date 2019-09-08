@@ -500,5 +500,5 @@
      </div>
     </section>
     <!--/ Product -->
-
+    <script type="text/javascript" src="/construct/dist/main.js"></script>
 @endsection

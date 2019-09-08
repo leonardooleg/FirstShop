@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2019-06-12 15:14:00.
+    * Generated on 2019-08-17 13:21:32.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -42,6 +42,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -189,6 +190,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -336,6 +338,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -483,6 +486,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -630,6 +634,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -777,6 +782,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,
@@ -924,6 +930,7 @@ namespace PHPSTORM_META {
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'cache' => \Illuminate\Cache\CacheManager::class,
         'cache.store' => \Illuminate\Cache\Repository::class,
+        'cart' => \Darryldecode\Cart\Cart::class,
         'command.app.name' => \Illuminate\Foundation\Console\AppNameCommand::class,
         'command.auth.make' => \Illuminate\Auth\Console\AuthMakeCommand::class,
         'command.auth.resets.clear' => \Illuminate\Auth\Console\ClearResetsCommand::class,

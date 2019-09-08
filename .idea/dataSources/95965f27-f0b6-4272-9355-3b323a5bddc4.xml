@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="shop@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.16">
     <root id="1">
       <ServerVersion>5.7.25</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -9,7 +9,6 @@
     </root>
     <schema id="2" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
-      <Substituted>1</Substituted>
     </schema>
     <schema id="3" parent="1" name="mysql">
       <Collation>utf8_general_ci</Collation>
@@ -20,7 +19,6 @@
     <schema id="5" parent="1" name="shop">
       <Current>1</Current>
       <Collation>utf8_general_ci</Collation>
-      <Visible>1</Visible>
     </schema>
     <schema id="6" parent="1" name="sys">
       <Collation>utf8_general_ci</Collation>

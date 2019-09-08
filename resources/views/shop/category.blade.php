@@ -3,25 +3,45 @@
 
 @section('content')
 
-    {{ Breadcrumbs::render('category', $category) }}
+
+    <content>
+
+        <div class="body row">
+            <div class="col-md-2 col-sm-12">
+
+                @include('layouts.leftMenu')
+
+            </div>
+            <div class="col-md-10 col-sm-12">
+
+                 <!---->
+                {{ Breadcrumbs::render('category', $category) }}
 
 
-                    <div class="row">
-                        @foreach($products as $product)
-                            <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                                <a href="{{route('product', $product->slug)}}">
-                                    <img class="card-img-top" data-src="{{asset('/storage/'. $product->image) }}" alt="100%x180" src="{{asset('/storage/'. $product->image) }}" data-holder-rendered="true" style="">
-                                    <div class="card-body">
-                                        <h5 class="card-title"> {{$product->title}}</h5>
-                                        <p class="card-text">{!! $product->description_short !!}</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
+                <div class="row">
+                    @foreach($products as $product)
+                        <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            <a href="{{route('product', $product->slug)}}">
+                                <img class="card-img-top" data-src="{{asset('/storage/'. $product->image) }}" alt="100%x180" src="{{asset('/storage/'. $product->image) }}" data-holder-rendered="true" style="">
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{$product->title}}</h5>
+                                    <p class="card-text">{!! $product->description_short !!}</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
 
-            <div class="span" style="width: 100%;"></div>
+                <div class="span" style="width: 100%;"></div>
             {{$products->links()}}
+                 <!---->
+
+            </div>
+        </div>
+    </content>
+    @include('layouts.footer')
+
+
 
 @endsection

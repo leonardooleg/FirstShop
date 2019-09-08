@@ -35,6 +35,15 @@ class ShopController extends Controller
             'next_images'=>$next_images
         ]);
     }
+    public function productID($id)
+    {
+        $product=Product::where('id',$id)->first();
+
+
+
+
+        return redirect('product/'. $product->slug);
+    }
 
     public function constructor()
     {

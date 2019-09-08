@@ -24,11 +24,17 @@
             @include('admin.categories.partials.form')
 
         </form>
-        <form onsubmit="if(confirm('Удалить?')){ return true}else{return false}" action="{{route('admin.category.destroy', $category)}}" method="post">
+        <form  onsubmit="deleteCategory(this);return false;" action="{{route('admin.category.destroy', $category)}}" method="post">
             @csrf
             @method('DELETE')
             <input class="btn btn-danger float-right" type="submit" value="Удалить">
         </form>
     </div>
-
+    <script>
+        function deleteCategory(f) {
+            if (confirm("Вы уверены, что хотите удалить выделенный пункт?\nЭта операция не восстановима."))
+                f.submit();
+        }
+        console.log('delete')
+    </script>
 @endsection
