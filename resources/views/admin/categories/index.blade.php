@@ -21,7 +21,7 @@
             <th class="text-right">Изменить</th>
             </thead>
             <tbody>
-            @forelse ($categories as $category)
+            @forelse ($categories->sortByDesc('id') as $category)
                 <tr>
                     <td>  <a href="{{route('admin.category.edit', $category)}}">{{$category->title}}</a></td>
                     <td>

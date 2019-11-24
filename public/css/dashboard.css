@@ -7,7 +7,9 @@ body {
   height: 16px;
   vertical-align: text-bottom;
 }
-
+main .container {
+    padding-top: 15px;
+}
 /*
  * Sidebar
  */
@@ -104,3 +106,103 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+/* Хлебные крошки */
+/* Style the list */
+ol.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ol.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ol.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ol.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ol.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/* Хлебные крошки */
+/*Админка добавить товар*/
+.treeHTML { /* вся форма */
+    line-height: normal;
+}
+.treeHTML label { /* пункты и соединяющие их линии */
+    position: relative;
+    display: block;
+    padding: 0 0 0 1.2em;
+}
+.treeHTML label:not(:nth-last-of-type(1)) {
+    border-left: 1px solid #94a5bd;
+}
+.treeHTML label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.1em;
+    height: .5em;
+    border-bottom: 1px solid #94a5bd;
+}
+.treeHTML label:nth-last-of-type(1):before {
+    border-left: 1px solid #94a5bd;
+}
+.treeHTML fieldset,
+.treeHTML fieldset[class=""] .razvernut { /* списки */
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0 0 0 2em;
+    border: none;
+}
+.treeHTML fieldset:not(:last-child) {
+    border-left: 1px solid #94a5bd;
+}
+.treeHTML .razvernut {
+    position: relative;
+    visibility: visible;
+}
+.treeHTML > fieldset > legend,
+.treeHTML .razvernut > fieldset > legend { /* плюс */
+    position: absolute;
+    left: -5px;
+    top: 0;
+    height: 7px;
+    width: 7px;
+    margin-top: -1em;
+    padding: 0;
+    border: 1px solid #94a5bd;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #fff;
+    background-image: linear-gradient(to left, #1b4964, #1b4964), linear-gradient(#1b4964, #1b4964), linear-gradient(315deg, #a0b6d8, #e8f3ff 60%, #fff 60%);
+    background-size: 1px 5px, 5px 1px, 100% 100%;
+    visibility: visible;
+    cursor: pointer;
+}
+.treeHTML fieldset[class=""] .razvernut fieldset legend {
+    visibility: hidden;
+}
+.treeHTML .razvernut > legend { /* минус */
+    background-image: linear-gradient(#1b4964, #1b4964) !important;
+    background-size: 5px 1px !important;
+}
+/*Админка добавить товар*/

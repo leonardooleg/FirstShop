@@ -16,9 +16,40 @@
 <input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$product->slug ?? ""}}" readonly="">
 
 <label for=""><strong>Родительская категория</strong></label>
-<select class="form-control" name="categories[]" multiple="">
+<div id="Tree1" class="form-control treeHTML " name="categories[]"   style="height:400px; overflow:auto;">
     @include('admin.product.partials.categories', ['categories' => $categories])
-</select>
+</div>
+
+
+
+<script>
+        var t = document.getElementById('Tree1');
+        [].forEach.call(t.querySelectorAll('fieldset'), function(eFieldset) {
+            var main = [].filter.call(t.querySelectorAll('[type="checkbox"]'), function(element) {return element.parentNode.nextElementSibling === eFieldset;});
+            main.forEach(function(eMain) {
+                var l = [].filter.call(eFieldset.querySelectorAll('legend'), function(e) {return e.parentNode === eFieldset;});
+                l.forEach(function(eL) {
+                    var all = eFieldset.querySelectorAll('[type="checkbox"]');
+                    eL.onclick = Razvernut;
+                    eFieldset.onchange = Razvernut;
+                    function Razvernut() {
+                        var allChecked = eFieldset.querySelectorAll('[type="checkbox"]:checked').length;
+                        eMain.checked = allChecked === all.length;
+                        eMain.checked = allChecked > 0 && allChecked <= all.length;
+                        if (eMain.checked  || ((eFieldset.className === '') && (allChecked === "0"))) {
+                            eFieldset.className = 'razvernut';
+                        } else {
+                            eFieldset.className = 'razvernut';
+                        }
+                    }
+                    eFieldset.className = 'razvernut';
+
+                });
+            });
+        });
+</script>
+
+
 
 <label for=""><strong>Краткое описание</strong></label>
 <textarea class="form-control" id="description_short" name="description_short">{{$product->description_short ?? ""}}</textarea>
@@ -54,7 +85,7 @@
 
 <label for="basic-url"><strong>Дополнительные картинки</strong></label>
 
-@if ($next_images!='')
+@if (isset($next_images)!='')
     @foreach($next_images as $next_image)
         <div class="card mb-12 hdtuto" >
             <div class="row no-gutters">

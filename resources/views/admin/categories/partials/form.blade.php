@@ -21,6 +21,16 @@
     @include('admin.categories.partials.categories', ['categories' => $categories, 'delimiter'  => ''])
 </select>
 
+<label for="">Тип материала (ткань)?</label>
+<select class="form-control" name="cloth">
+    @if (isset($category->cloth))
+        <option value="0" @if ($category->cloth == 0) selected="" @endif>Нет</option>
+        <option value="1" @if ($category->cloth == 1) selected="" @endif>Да</option>
+    @else
+        <option value="0">Нет</option>
+        <option value="1">Да</option>
+    @endif
+</select>
 <hr />
 
 <input class="btn btn-primary" type="submit" value="Сохранить">

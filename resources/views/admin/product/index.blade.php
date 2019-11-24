@@ -16,7 +16,7 @@
         <table class="table table-striped">
             <thead>
             <th>Наименование</th>
-            <th>Категория</th>
+           {{-- <th>Категория</th>--}}
             <th>Опубликована</th>
             <th class="text-right">Изменить</th>
             </thead>
@@ -24,11 +24,11 @@
             @forelse ($products as $product)
                 <tr>
                     <td>  <a href="{{route('admin.product.edit', $product)}}">{{$product->title}}</a></td>
-                    <td>
+                   {{-- <td>
                         @if($product->parent_id)дочерняя
                         @else <b>Главная</b>
                         @endif
-                    </td>
+                    </td>--}}
                     <td>
                         @if($product->published==1)Опубликована
                         @else Нет

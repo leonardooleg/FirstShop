@@ -20,12 +20,12 @@ class CartController extends Controller
         if(request()->ajax())
         {
             $items = [];
-
-            \Cart::session($userId)->getContent()->each(function($item) use (&$items)
+            $cartCollection = \Cart::session($userId)->getContent();
+            $cart = $cartCollection->sort();
+            $cart->each(function($item) use (&$items)
             {
                 $items[] = $item;
             });
-
             return response(array(
                 'success' => true,
                 'data' => $items,
@@ -49,11 +49,11 @@ class CartController extends Controller
 
         $customAttributes = [
             'color' => request('color'),
-            'size' => request('size')
+            'size' => request('size'),
+            'img' => request('img')
         ];
-
-        $item = \Cart::session($userId)->add($id, $name, $price, $qty, $customAttributes);
-
+        $cart_id = request('id').$customAttributes['color'];
+        $item = \Cart::session($userId)->add($cart_id,$id, $name, $price, $qty, $customAttributes);
         return response(array(
             'success' => true,
             'data' => $item,
@@ -115,6 +115,25 @@ class CartController extends Controller
             'data' => [],
             'message' => "cart conditions cleared."
         ),200,[]);
+    }
+
+    public function update($cart_id,$actions)
+    {
+        $userId = 1; // get this from session or wherever it came from
+        \Cart::session($userId);
+        //$cart = \Cart::session($userId)->getContent();
+        if($actions==1)
+        $action=-1;
+        else $action=1;
+        \Cart::update($cart_id, array(
+            'quantity' => $action, // so if the current product has a quantity of 4, another 2 will be added so this will result to 6
+        ));
+       // $cart2 = \Cart::session($userId)->getContent();
+        return response(array(
+        'success' => true,
+        'data' => [],
+        'message' => "cart updated."
+    ),200,[]);
     }
 
     public function delete($id)

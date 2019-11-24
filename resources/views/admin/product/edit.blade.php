@@ -12,7 +12,7 @@
 
         <hr />
 
-        <form class="form-horizontal" action="{{route('admin.product.update', $product)}}" method="post" enctype="multipart/form-data">
+        <form name ="Tree" class="form-horizontal" action="{{route('admin.product.update', $product)}}" method="post" enctype="multipart/form-data">
             @method('PUT')
             {{ csrf_field() }}
 

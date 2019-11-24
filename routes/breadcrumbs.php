@@ -2,7 +2,7 @@
 
 // Home
 Breadcrumbs::for('welcome', function ($trail) {
-    $trail->push('Welcome', route('welcome'));
+    $trail->push('Главная', route('welcome'));
 });
 
 // Home > About

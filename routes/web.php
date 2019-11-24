@@ -15,6 +15,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::get('/data-chart', 'DashboardController@chartData')->name('admin.chart_data');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+    Route::resource('/textiles', 'TextilesController', ['as'=>'admin']);
     Route::resource('/product', 'ProductController', ['as'=>'admin']);
     Route::group(['prefix' => 'user_managment', 'namespace' => 'UserManagment' ], function () {
         Route::resource('/user', 'UserController', ['as'=>'admin.user_managment']);
@@ -44,6 +45,7 @@ Route::post('/cart','CartController@add')->name('cart.add');
 Route::post('/cart/conditions','CartController@addCondition')->name('cart.addCondition');
 Route::delete('/cart/conditions','CartController@clearCartConditions')->name('cart.clearCartConditions');
 Route::get('/cart/details','CartController@details')->name('cart.details');
+Route::get('/cart/update/{id}&{action}','CartController@update')->name('cart.update');
 Route::delete('/cart/{id}','CartController@delete')->name('cart.delete');
 
 Route::group(['prefix' => 'wishlist'],function()
