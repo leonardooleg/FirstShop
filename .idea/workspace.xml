@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Color.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Sex.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Size.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Textile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Type.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/textiles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/leonardooleg.club.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leonardooleg.club.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nginx_1.14_vhost.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/shop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/vues.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app_admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/partials/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/partials/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footerCart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footerCart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -531,6 +493,7 @@
       <workItem from="1574533759507" duration="1298000" />
       <workItem from="1574546391301" duration="3776000" />
       <workItem from="1574621480530" duration="510000" />
+      <workItem from="1574622246361" duration="850000" />
     </task>
     <task id="LOCAL-00001" summary="переустановка заново">
       <created>1557416268420</created>
@@ -686,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567948240198</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="дизайн головної">
+      <created>1574622840920</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1574622840920</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,6 +745,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="659" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1573728859591" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1574622797346">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1574622797346" />
     <state x="709" y="294" key="FileChooserDialogImpl" timestamp="1571353607928">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -856,6 +830,10 @@
     </state>
     <state x="568" y="243" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1571950158964" />
     <state x="415" y="181" key="SettingsEditor/1920.1080" timestamp="1570918622622" />
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2" timestamp="1574623087741">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1574623087741" />
     <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1574552798850">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
