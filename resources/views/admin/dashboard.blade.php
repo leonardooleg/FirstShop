@@ -37,11 +37,18 @@
             </div>
         </div>
 
-
+        <div class="row">
+            <h3>Товар заканчиваеться</h3>
+            <div class="list-group col-md-12">
+                @foreach($textiles as $textile)
+                <a href="/admin/textiles/{{$textile->id}}/edit" class="list-group-item list-group-item-action list-group-item-danger">{{$textile->title}} ({{$textile->sex}} / {{$textile->cloths}} / {{$textile->type}} / {{$textile->size_world}}({{$textile->size_rus}}) / {{$textile->color}}) - <span class="badge badge-primary badge-pill" style="font-size: 16px"> {{$textile->textiles_qty}} </span></a>
+                @endforeach
+            </div>
+        </div>
 
         <div class="row">
                 <div class="card border-primary col-sm-6">
-                    <div class="card-header"><a class="btn btn-primary float-left" href="{{route('admin.category.create')}}" role="button">Создать категорию</a></div>
+                    <div class="card-header"><h2 class="float-left">Категории </h2><a class="btn btn-primary float-right" href="{{route('admin.category.create')}}" role="button">Создать категорию</a></div>
                     <div class="card-body text-primary">
                         <ul class="list-group">
                         @foreach($categories as $category)
@@ -57,7 +64,7 @@
                 </div>
 
                 <div class="card border-danger col-sm-6" >
-                    <div class="card-header"><a class="btn btn-danger float-right" href="{{route('admin.category.create')}}" role="button">Создать материал</a></div>
+                    <div class="card-header"><h2 class="float-left">Товары </h2><a class="btn btn-danger float-right" href="{{route('admin.category.create')}}" role="button">Создать материал</a></div>
                     <div class="card-body text-danger">
                             @foreach($products as $product)
                                 <a class="" href="{{route('admin.product.edit', $product)}}">

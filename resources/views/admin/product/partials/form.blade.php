@@ -16,10 +16,47 @@
 <input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$product->slug ?? ""}}" readonly="">
 
 <label for=""><strong>Родительская категория</strong></label>
-<div id="Tree1" class="form-control treeHTML " name="categories[]"   style="height:400px; overflow:auto;">
+<div id="Tree1" class="form-control treeHTML "   onclick="getCheckedCheckBoxes()" style="height:400px; overflow:auto;">
     @include('admin.product.partials.categories', ['categories' => $categories])
 </div>
 
+
+<!--Ткань-->
+<label for=""><strong>Наличие выбранной ткани</strong></label>
+<table  class="table">
+    <thead>
+        <tr>
+            <th scope="col">Материал</th>
+            <th scope="col">Размер</th>
+            <th scope="col">Цвет</th>
+            <th scope="col">Добавить нет/да</th>
+            <th scope="col">Сделать основным</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    @foreach ($textiles as $textile)
+            <tr id="table_textiles" class="category-{{$textile->textiles_category}}">
+                <th scope="row">{{$textile->cloths ?? ""}} / {{$textile->sex ?? ""}} / {{$textile->type ?? ""}}</th>
+                <td>{{$textile->size_world ?? ""}} ({{$textile->size_rus ?? ""}})</td>
+                <td> {{$textile->color ?? ""}}</td>
+                <td>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" textile ="{{$textile->id ?? ""}}" class="custom-control-input" name="textileable[]" id="customSwitch{{$textile->id ?? ""}}" value="{{$textile->id ?? ""}}"  @if(isset($textileables[$textile->id]['id']))  checked @endif>
+                        <label class="custom-control-label" for="customSwitch{{$textile->id ?? ""}}"></label>
+                    </div>
+                </td>
+                <td>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" textile ="{{$textile->id ?? ""}}" id="customRadio{{$textile->id ?? ""}}" value="{{$textile->id ?? ""}}" name="by_default" class="custom-control-input"  @if(isset($textileables[$textile->id]['by_default']))  checked @endif >
+                        <label class="custom-control-label" for="customRadio{{$textile->id ?? ""}}"></label>
+                    </div>
+                </td>
+            </tr>
+    @endforeach
+        </tbody>
+</table>
+<!--Ткань-->
 
 
 <script>
@@ -41,12 +78,45 @@
                         } else {
                             eFieldset.className = 'razvernut';
                         }
+                        getCheckedCheckBoxes();
                     }
                     eFieldset.className = 'razvernut';
 
                 });
             });
         });
+
+        function getCheckedCheckBoxes() {
+            var selectedCheckBoxes = document.querySelectorAll('input.category_cloth:checked');
+            var checkedValues = Array.from(selectedCheckBoxes).map(cb => cb.value);
+            /***/
+            /*очистить предедущие*/
+            var st = document.querySelectorAll('[id="table_textiles"]');
+            for (var i = 0; i < st.length; i++) {
+                st[i].classList.remove('table-success');
+                console.log('remove')
+            }
+            /*очистить предедущие*/
+            var cat =checkedValues;
+            cat=cat[0];
+            cat= 'category-'+cat;
+            console.log(cat);
+            /***/
+            /**/
+            var x = document.getElementsByClassName(cat);
+            var i;
+            for (i = 0; i < x.length; i++)
+            {
+                x[i].className += ' table-success'; // WITH space added
+            }
+            /**/
+            /*отключить поля*/
+            var str = document.querySelectorAll('.custom-switch li.custom-control-input:checked');
+            /*отключить поля*/
+
+            return checkedValues;
+        }
+        getCheckedCheckBoxes()
 </script>
 
 
@@ -59,7 +129,7 @@
 
 
 <hr />
-<div class="card mb-12" >
+<div class="card mb-12">
     <div class="row no-gutters">
         <div class="col-md-1">
             @if (isset($product->image))

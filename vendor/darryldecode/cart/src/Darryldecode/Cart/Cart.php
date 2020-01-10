@@ -144,17 +144,16 @@ class Cart
      * @return $this
      * @throws InvalidItemException
      */
-    public function add($cart_id, $id, $name = null, $price = null, $quantity = null, $attributes = array(), $conditions = array())
+    public function add($id, $name = null, $price = null, $quantity = null, $attributes = array(), $conditions = array())
     {
         // if the first argument is an array,
         // we will need to call add again
-        if (is_array($cart_id)) {
+        if (is_array($id)) {
             // the first argument is an array, now we will need to check if it is a multi dimensional
             // array, if so, we will iterate through each item and call add again
-            if (Helpers::isMultiArray($cart_id)) {
-                foreach ($cart_id as $item) {
+            if (Helpers::isMultiArray($id)) {
+                foreach ($id as $item) {
                     $this->add(
-                        $item['cart_id'],
                         $item['id'],
                         $item['name'],
                         $item['price'],
@@ -165,7 +164,6 @@ class Cart
                 }
             } else {
                 $this->add(
-                    $id['cart_id'],
                     $id['id'],
                     $id['name'],
                     $id['price'],
@@ -180,7 +178,6 @@ class Cart
 
         // validate data
         $item = $this->validate(array(
-            'cart_id' => $cart_id,
             'id' => $id,
             'name' => $name,
             'price' => Helpers::normalizePrice($price),
@@ -193,12 +190,12 @@ class Cart
         $cart = $this->getContent();
 
         // if the item is already in the cart we will just update it
-        if ($cart->has($cart_id)) {
+        if ($cart->has($id)) {
 
-            $this->update($cart_id, $item);
+            $this->update($id, $item);
         } else {
 
-            $this->addRow($cart_id, $item);
+            $this->addRow($id, $item);
 
         }
 
@@ -215,7 +212,7 @@ class Cart
      * of the item you want to update on it
      * @return bool
      */
-    public function update($cart_id, $data)
+    public function update($id, $data)
     {
         if($this->fireEvent('updating', $data) === false) {
             return false;
@@ -223,7 +220,7 @@ class Cart
 
         $cart = $this->getContent();
 
-        $item = $cart->pull($cart_id);
+        $item = $cart->pull($id);
 
         foreach ($data as $key => $value) {
             // if the key is currently "quantity" we will need to check if an arithmetic
@@ -253,7 +250,7 @@ class Cart
             }
         }
 
-        $cart->put($cart_id, $item);
+        $cart->put($id, $item);
 
         $this->save($cart);
 
@@ -301,19 +298,19 @@ class Cart
      * @param $id
      * @return bool
      */
-    public function remove($cart_id)
+    public function remove($id)
     {
         $cart = $this->getContent();
 
-        if($this->fireEvent('removing', $cart_id) === false) {
+        if($this->fireEvent('removing', $id) === false) {
             return false;
         }
 
-        $cart->forget($cart_id);
+        $cart->forget($id);
 
         $this->save($cart);
 
-        $this->fireEvent('removed', $cart_id);
+        $this->fireEvent('removed', $id);
         return true;
     }
 
@@ -551,8 +548,8 @@ class Cart
         });
 
         return Helpers::formatValue(floatval($sum), $formatted, $this->config);
-    }
-
+    }    
+    
     /**
      * get cart sub total
      * @param bool $formatted

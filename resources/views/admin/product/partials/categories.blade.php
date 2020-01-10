@@ -1,13 +1,16 @@
 @foreach ($categories as $category)
 
-
-    <label><input type="checkbox" value="{{$category->id ?? ""}}"
-            @isset($product->id)
+    @php
+        if($category->cloth == 1) $category_cloth='category_cloth';
+        else $category_cloth='';
+    @endphp
+    <label><input type="checkbox" name="categories[]" value="{{$category->id ?? ""}}" class="{{$category_cloth ?? ""}}"
+        @isset($product->id)
             @foreach ($product->categories as $category_product)
-            @if ($category->id == $category_product->id)
-            selected="selected"
-        @endif
-        @endforeach
+                @if ($category->id == $category_product->id)
+        checked="checked"
+                @endif
+            @endforeach
         @endisset
 
         > {{$category->title ?? ""}}</label>

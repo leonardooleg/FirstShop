@@ -65,6 +65,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.orders.index')}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="1em"
+                                 height="1em"
+                                 style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                                 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 13a5 5 0 0 1-5-5h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2a5 5 0 0 1-5 5m0-10a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3m7 3h-2a5 5 0 0 0-5-5a5 5 0 0 0-5 5H5c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z" fill="#626262"/></svg>
+                            <span data-feather="orders"></span>
+                            Заказы
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.category.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
                             <span data-feather="file"></span>

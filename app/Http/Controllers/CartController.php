@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Color;
+use App\Models\Size;
 use Darryldecode\Cart\CartCondition;
 
 class CartController extends Controller
@@ -42,18 +44,28 @@ class CartController extends Controller
     {
         $userId = 1; // get this from session or wherever it came from
 
-        $id = request('id');
         $name = request('name');
         $price = request('price');
         $qty = request('qty');
-
+        $color= Color::where("id_color",request("color"))->first();
+        $color_code= $color->color_code;
+        $color_name= $color->color;
+        $size= Size::where("id_size",request("size"))->first();
+        $size_world= $size->size_world;
+        $size_rus= $size->size_rus;
         $customAttributes = [
+            'id' => request('id'),
+            'checked_textiles' => request('checked_textiles'),
             'color' => request('color'),
+            'color_code' => $color_code,
+            'color_name' => $color_name,
             'size' => request('size'),
+            'size_world' => $size_world,
+            'size_rus' => $size_rus,
             'img' => request('img')
         ];
         $cart_id = request('id').$customAttributes['color'];
-        $item = \Cart::session($userId)->add($cart_id,$id, $name, $price, $qty, $customAttributes);
+        $item = \Cart::session($userId)->add($cart_id, $name, $price, $qty, $customAttributes);
         return response(array(
             'success' => true,
             'data' => $item,

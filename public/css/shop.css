@@ -742,6 +742,7 @@ input[type=radio] {
 }
 .size-table :checked + label {
     font-weight: bold;
+    border-color: #09f;
 }
 .size-table li.form-check.active label {
     font-weight: bold;
@@ -758,7 +759,7 @@ input[type=radio] {
     text-align: center;
     border: 1px solid #d9d9d9;
     border-radius: 3px;
-    color: #666666;
+    color: #000000;
     font-weight: bold;
     margin: 0 8px 6px 0;
     padding: 5px 0;
@@ -803,6 +804,9 @@ input[type=radio] {
     box-shadow: 0 0 0 2px #09f;
 }
 .color-table li.form-check.active label{
+    box-shadow: 0 0 0 3px #09f;
+}
+.color-table :checked + label {
     box-shadow: 0 0 0 3px #09f;
 }
 .color-table .form-check {
@@ -866,7 +870,13 @@ a.info-by-text_a{
     font-size: 13.5px;
 }
 
-
+.disabled_size {
+    border: 1px dashed #ccc;
+    box-shadow: unset;
+    color: #ccc;
+    opacity: .6;
+    pointer-events: none;
+}
 
 /************************************************************************************/
 /***************Страница товара*****************/
@@ -1320,7 +1330,131 @@ section.card-product.product__top-block {
 .total-info-cart{
     font-size: 19px;
 }
+/****Корзина*****/
+/****Корзина2*****/
+.my-bg-grey{
+    background-color: #eaeaea;
+}
+.unset-row{
+    margin-left: unset;
+    margin-right: unset;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.cart-2-fon-minus{
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.fon-cart-2{
+    background-color: white;
+    padding: 15px;
+}
+.fon-cart-2-top{
+    margin-top: 15px;
+}
+.cart2-block h3{
+    font-size: 24px;
+    padding: 10px 0 10px 0;
+}
+.cart2-block .data_trek{
+    color: #333333;
+}
+.cart2-block .data_trek label{
+    font-size: 16px;
+    text-align: center;
+}
+.cart2-block .data_trek input{
+    font-size: 16px;
+}
+.cart2-block .cart_items_blok{
+    color: #666666;
+    font-size: 14px;
+}
+.type_pay + img {
+    opacity: 0.7;
+}
+.type_pay:checked + img {
+    opacity: 1;
+}
+/*Галочка я согласен*/
+input[type="checkbox"]:checked + label::after {
+    content: '';
+    position: absolute;
+    width: 4.2ex;
+    height: 2.4ex;
+    background: rgba(0, 0, 0, 0);
+    top: 0ex;
+    left: 0.4ex;
+    border: 5px solid #009e02;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
+input[type="checkbox"] {
+    line-height: 2.1ex;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: 40px;
+    height: 1px;
+    margin-top: 15px;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -25%;
+    height: 4ex;
+    width: 4ex;
+    background-color: white;
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 4px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.25);
+    margin-right: 0.5em;
+}
+.i-check a{
+    color: unset;
+    border-bottom: 1px solid Gainsboro;
+}
+/*Галочка я согласен*/
+/*.cart2-block .product_cart{
+    font-size: 14px;
+}
+.cart2-block .total-price{
+    font-size: 14px;
+}*/
+
+span.full-price{
+    font-size: 26px;
+}
+
+/****Корзина2*****/
+/****Корзина3*****/
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+.bd-callout-info {
+    border-left-color: #5bc0de;
+}
+/****Корзина3*****/
 
 
 /********Вас заинтересует***********/
@@ -1456,7 +1590,7 @@ section.card-product.product__top-block {
 
 /********Вас заинтересует***********/
 
-/****Корзина*****/
+
 
 /*****************ФУТЕР****************/
 .bottom-footer.container {

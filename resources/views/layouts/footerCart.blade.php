@@ -10,29 +10,35 @@
 
 <script src="/js/carousel.js"></script>
 
-<script  type="text/javascript">
+<script  type="application/javascript">
     var _token = '<?php echo csrf_token() ?>';
 
     $(document).ready(function() {
-        console.log(1);
         var app = new Vue({
             el: '#app',
             data: {
                 details: {
                     sub_total: 0,
                     total: 0,
-                    total_quantity: 0
+                    total_quantity: 0,
+                    checked_textiles: ''
                 },
                 itemCount: 0,
                 items: [],
                 item: {
+                    b: 1,
                     id: '{{$product->id ?? ''}}',
                     name: '{{$product->title ?? ''}}',
                     price:  '{{$product->price ?? ''}}',
                     qty: 1,
+                    checked_textiles: '',
                     attributes: {
                         size: '',
+                        size_world: '',
+                        size_rus: '',
                         color: '',
+                        color_code: '',
+                        color_name: '',
                         img: '{{$product->image ?? ''}}'
                     }
 
@@ -44,7 +50,11 @@
                     value: '',
                     attributes: {
                         size: '',
+                        size_world: '',
+                        size_rus: '',
                         color: '',
+                        color_code: '',
+                        color_name: '',
                         img: ''
                     }
                 },
@@ -71,8 +81,13 @@
                         name:_this.item.name,
                         price:_this.item.price,
                         qty:_this.item.qty,
+                        checked_textiles:_this.item.checked_textiles,
                         size:_this.item.attributes.size,
+                        /*size_world:_this.item.attributes.size_world,
+                        size_rus:_this.item.attributes.size_rus,*/
                         color:_this.item.attributes.color,
+                        /*color_code:_this.item.attributes.color_code,
+                        color_name:_this.item.attributes.color_name,*/
                         img:_this.item.attributes.img
                     }).then(function(success) {
                         console.log('add');
@@ -251,52 +266,61 @@
                    }
                }
            });*/
+        @if(preg_match("/product/", $_SERVER['REQUEST_URI']))
 
+        window.onload = function(){
+            var elem = document.querySelectorAll('[name="color"]'), i = elem.length;
+            var color;
+            while(i--){
+                elem[i].onclick = function(i){
+                    return function(){
+                        //  let someTextiles = textiles.filter(item => item.textiles_color == this.value);
+                        color= this.value;
+                        // console.log(color+"-color");                 //цвет
 
-    });
+                        var x = document.getElementsByName("size");
+                        var a;
+                        for (a = 0; a < x.length; a++) {
+                            var tablesize= x[a].value;
+                            // console.log(tablesize+"-size");         //розмер
+                            var tempLsize = document.getElementById('lSize'+tablesize);
+                            var tempsize = document.getElementById('size'+tablesize);
+                            tempLsize.classList.add("disabled_size");
+                            tempsize.disabled = true;
+                            tempsize.checked = false;
+                            var b;
+                            for (b = 0; b < textiles.length; b++) {
+                                if (textiles[b].textiles_size == tablesize && textiles[b].textiles_color == color) {
+                                    tempLsize.classList.remove("disabled_size");
+                                    tempsize.disabled = false;
+                                }
+                            }
+                        }
+                    };
 
-    $(function(){
-        $(document).on('click','.plus',function(){
-            console.log('click');
-            $(this).prev().val(+$(this).prev().val() + 1);
-        });
-        $(document).on('click','.minus',function(){
-            if ($(this).next().val() > 1) {
-                if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+                }(i);
             }
-        });
+            var elemSize = document.querySelectorAll('[name="size"]'), c = elemSize.length;
+            while(c--){
+                elemSize[c].onclick = function(c){
+                    return function(){
+                        var sizes= this.value;
+                        var d;
+                        for (d = 0; d < textiles.length; d++) {
+                            if (textiles[d].textiles_size == sizes && textiles[d].textiles_color == color) {
+                                document.getElementById('checked_textiles').value=textiles[d].id;
+                                Vue.set(app.item, 'checked_textiles', textiles[d].id);
+                                /*console.log(textiles[d].id);*/
+                            }
+                        }
+                    };
+                }(c);
+            }
+        };
+        @endif
     });
 
-
-
-    /*Щоб виділяти колір/розмір*/
-    $(function() {
-        var $radioButtons = $('input[type="radio"]');
-        $radioButtons.click(function() {
-            $radioButtons.each(function() {
-                $(this).parent().toggleClass('active', this.checked);
-            });
-        });
-    });
-    /*Щоб виділяти колір/розмір*/
-
-    /*Анімація додавання товара*/
-    $(function(){
-        $('.button-add').click(function(){
-            console.log('click-add');
-            $('.button-add img').clone()
-                .css({'position' : 'absolute', 'z-index' : '100', 'display':'block'})
-                .appendTo(".button-add").animate({
-                top: $(".shopping-cart").offset()['top'],
-                right: $(".shopping-cart").offset()['right'],
-                opacity: 0,
-                width: 40
-            },1500);
-        });
-    });
-    /*Анімація додавання товара*/
 </script>
-
 
 
 <!---FooterCart--->

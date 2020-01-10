@@ -87,43 +87,31 @@
                                     <div class="size-name">Размер</div>
                                     <div class="size-name_table">Таблица размеров</div>
                                 </div>
-                                <div class="size-table ">
-                                    <li class="form-check active" ><input type="radio" value="XXS (42)" v-model="item.attributes.size" name="size" id="size1" checked><label class="form-check-label" for="size1">XXS (42)</label></li>
-                                    <li class="form-check"><input type="radio" value="XS (46)" v-model="item.attributes.size" name="size" id="size2"><label class="form-check-label" for="size2">XS (46)</label></li>
-                                    <li class="form-check" ><input type="radio" value="S (48)" v-model="item.attributes.size" name="size" id="size3"><label class="form-check-label" for="size3">S (48)</label></li>
-                                    <li class="form-check" ><input type="radio" value="M (50)" v-model="item.attributes.size" name="size" id="size4"><label class="form-check-label" for="size4">M (50)</label></li>
-                                    <li class="form-check" ><input type="radio" value="L (52)" v-model="item.attributes.size" name="size" id="size5"><label class="form-check-label" for="size5">L (52)</label></li>
-                                    <li class="form-check" ><input type="radio" value="XL (54)" v-model="item.attributes.size" name="size" id="size6"><label class="form-check-label" for="size6">XL (54)</label></li>
-                                    <li class="form-check" ><input type="radio" value="XXL (56-58)" v-model="item.attributes.size" name="size" id="size7"><label class="form-check-label" for="size7">XXL (56-58)</label></li>
-                                    <li class="form-check" ><input type="radio" value="XXXL (60-62)" v-model="item.attributes.size" name="size" id="size8"><label class="form-check-label" for="size8">XXXL (60-62)</label></li>
-                                    <li class="form-check" ><input type="radio" value="4XL (64-66)" v-model="item.attributes.size" name="size" id="size9"><label class="form-check-label" for="size9">4XL (64-66)</label></li>
-                                    <li class="form-check" ><input type="radio" value="5XL (68-70)" v-model="item.attributes.size" name="size" id="size10"><label class="form-check-label" for="size10">5XL (68-70)</label></li>
-                                    <li class="form-check" ><input type="radio" value="6XL (72-74)" v-model="item.attributes.size" name="size" id="size11"><label class="form-check-label" for="size11">6XL (72-74)</label></li>
-                                    <li class="form-check" ><input type="radio" value="7XL (76-78)" v-model="item.attributes.size" name="size" id="size12"><label class="form-check-label" for="size12">7XL (76-78)</label></li>
+                                <div class="size-table sizetable">
+
+                                    @foreach ($textiles_size as $textile_size)
+                                        <li class="form-check " ><input type="radio" value="{{$textile_size->textiles_size}}"  v-model="item.attributes.size" name="size" id="size{{$textile_size->textiles_size}}" ><label class="form-check-label" id ="lSize{{$textile_size->textiles_size}}" for="size{{$textile_size->textiles_size}}">{{$textile_size->size_world}} ({{$textile_size->size_rus}})</label></li>
+                                    @endforeach
                                 </div>
 
                                 <div class="color_row">
                                         <div class="color-name">Цвет — белый</div>
                                         <div class="color-table">
-                                            <li class="form-check active"><input type="radio" value="FFFFFF" v-model="item.attributes.color" name="color" id="color1" class="color-table_color" checked ><label style="background:#FFFFFF" for="color1" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="272729" v-model="item.attributes.color" name="color" id="color2" class="color-table_color" ><label  style="background:#272729"for="color2" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="C71F2D" v-model="item.attributes.color" name="color" id="color3" class="color-table_color" ><label style="background:#C71F2D" for="color3"  class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="FAE03C" v-model="item.attributes.color" name="color" id="color4" class="color-table_color" ><label style="background:#FAE03C"  for="color4" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="1F5DA0" v-model="item.attributes.color" name="color" id="color5" class="color-table_color"><label  style="background:#1F5DA0" for="color5"  class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="F96714" v-model="item.attributes.color" name="color" id="color6" class="color-table_color" ><label style="background:#F96714" for="color6" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="00A28A" v-model="item.attributes.color" name="color" id="color7" class="color-table_color" ><label style="background:#00A28A" for="color7" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="58C9D4" v-model="item.attributes.color" name="color" id="color8" class="color-table_color"><label style="background:#58C9D4"  for="color8" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="233658" v-model="item.attributes.color" name="color" id="color9" class="color-table_color"><label  style="background:#233658" for="color9" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="E5CCAF" v-model="item.attributes.color" name="color" id="color10" class="color-table_color" ><label style="background:#E5CCAF" for="color10"  class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="e1e1e1" v-model="item.attributes.color" name="color" id="color11" class="color-table_color"><label  style="background:#e1e1e1" for="color11" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="F56C73" v-model="item.attributes.color" name="color" id="color12" class="color-table_color" ><label style="background:#F56C73" for="color12" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="ACDFDD" v-model="item.attributes.color" name="color" id="color13" class="color-table_color"><label  style="background:#ACDFDD" for="color13" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="EFC1D6" v-model="item.attributes.color" name="color" id="color14" class="color-table_color"><label  style="background:#EFC1D6" for="color14" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="5B5A41" v-model="item.attributes.color" name="color" id="color15" class="color-table_color"><label  style="background:#5B5A41" for="color15" class="color-table_color_span"></label></li>
-                                            <li class="form-check"><input  type="radio" value="EB3C27" v-model="item.attributes.color" name="color" id="color16" class="color-table_color" ><label style="background:#EB3C27" for="color16" class="color-table_color_span"></label></li>
+                                            @foreach ($textiles_color as $textile_color)
+                                                <li class="form-check formcheck  "><input type="radio"  value="{{$textile_color->id_color}}" v-model="item.attributes.color" name="color" id="color{{$textile_color->id_color}}" class="color-table_color" ><label style="background:#{{$textile_color->color_code}}" title="{{$textile_color->color}}" for="color{{$textile_color->id_color}}" class="color-table_color_span"></label></li>
+                                            @endforeach
                                         </div>
                                 </div>
+                                <input type="hidden" id="checked_textiles" value="{{$array_textile->id}}"  v-model="item.checked_textiles" name="checked_textiles" >
                             </div>
+                            <script type="application/javascript">
+                                var textiles =@php
+                                    echo json_encode($textiles);
+                                @endphp;
+
+
+                                //console.log('ok-textiles');
+                            </script>
 
                                 <div class="button-row row">
                                     <button type="button" v-on:click="addItem()" class="btn btn-warning button-add btn-lg">В корзину <img src="/icon/cart-w.png"><img class="cart-animate" src="/icon/cart.png"></button>

@@ -18,12 +18,16 @@
             {{-- Form include --}}
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="inputZip">Название</label>
-                    <input type="text" name="textiles" class="form-control" id="inputZip">
+                    <label for="inputState">Связать с категорией</label>
+                    <select id="inputState" name="textiles_category" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->title}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputState1">Ткань</label>
-                    <select id="inputState1" name="textiles_cloth" class="form-control">
+                    <select id="inputState1" name="textiles_cloths" class="form-control">
                         <option selected>Выбирете...</option>
                         @foreach($cloth as $cloth_one)
                             <option value="{{$cloth_one->id_cloths}}">{{$cloth_one->cloths}}</option>

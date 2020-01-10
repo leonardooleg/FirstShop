@@ -53,6 +53,22 @@ class TextilesController extends Controller
         ]);
     }
 
+   /* public function table($id)
+    {
+
+        /*return DB::table('textiles')
+            ->join('cloths', 'cloths.id_cloths', '=', 'textiles.cloths')
+            ->join('sexes', 'sexes.id_sex', '=', 'textiles.sex')
+            ->join('types', 'types.id_type', '=', 'textiles.type')
+            ->join('sizes', 'sizes.id_size', '=', 'textiles.size')
+            ->join('colors', 'colors.id_color', '=', 'textiles.color')
+            ->select('cloths.cloths', 'sexes.sex', 'types.type', 'sizes.size_world', 'sizes.size_rus', 'colors.color')
+            ->get();*//*
+        return Textile::orderBy('id', 'asc')->where('textiles_category', $id)->get();
+
+
+    }*/
+
     /**
      * Show the form for creating a new resource.
      *
@@ -66,6 +82,7 @@ class TextilesController extends Controller
         $size  =Size::all();
         $color  =Color::all();
         return view('admin.textiles.create', [
+            'categories' => Category::with('children')->where('cloth', 1)->get(),
             'cloth' => $cloth,
             'sex' => $sex,
             'type' => $type,
@@ -86,7 +103,7 @@ class TextilesController extends Controller
         $textiles = new Textile($request->all());
 
         $textiles->save();
-        // Categories
+
 
         return redirect()->route('admin.textiles.index');
     }

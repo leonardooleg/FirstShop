@@ -15,7 +15,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::get('/data-chart', 'DashboardController@chartData')->name('admin.chart_data');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+    Route::resource('/orders', 'OrdersController', ['as'=>'admin']);
     Route::resource('/textiles', 'TextilesController', ['as'=>'admin']);
+   /* Route::get('/p-textile/{id?}', 'TextilesController@table');*/
     Route::resource('/product', 'ProductController', ['as'=>'admin']);
     Route::group(['prefix' => 'user_managment', 'namespace' => 'UserManagment' ], function () {
         Route::resource('/user', 'UserController', ['as'=>'admin.user_managment']);
@@ -24,7 +26,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 Route::get('/','WelcomeController@index')->name('welcome');
 
+/*Route::get('product/{slug?}/{attr?}', 'ShopController@product')->name('product');*/
 Route::get('product/{slug?}', 'ShopController@product')->name('product');
+
 Route::get('product-cart/{id?}', 'ShopController@productID')->name('productID');
 Route::get('category/{slug?}', 'ShopController@category')->name('category');
 
@@ -48,6 +52,12 @@ Route::get('/cart/details','CartController@details')->name('cart.details');
 Route::get('/cart/update/{id}&{action}','CartController@update')->name('cart.update');
 Route::delete('/cart/{id}','CartController@delete')->name('cart.delete');
 
+Route::post('/cart2-details','Cart2Controller@go')->name('cart2.go');
+Route::get('/cart2','Cart2Controller@index')->name('cart2.index');
+Route::post('/cart2','Cart2Controller@add')->name('cart2.add');
+/*Route::get('/cart-finish','Cart2Controller@finish')->name('cart3.finish');*/
+
+
 Route::group(['prefix' => 'wishlist'],function()
 {
     Route::get('/','WishListController@index')->name('wishlist.index');
@@ -55,5 +65,9 @@ Route::group(['prefix' => 'wishlist'],function()
     Route::get('/details','WishListController@details')->name('wishlist.details');
     Route::delete('/{id}','WishListController@delete')->name('wishlist.delete');
 });
+Route::get('refresh-csrf', function(){
+    return csrf_token();
+});
 
 Auth::routes();
+
