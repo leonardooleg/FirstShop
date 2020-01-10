@@ -3446,7 +3446,7 @@
       <workItem from="1578349200558" duration="3075000" />
       <workItem from="1578493566603" duration="18992000" />
       <workItem from="1578593809516" duration="11725000" />
-      <workItem from="1578673467358" duration="7452000" />
+      <workItem from="1578673467358" duration="8024000" />
     </task>
     <task id="LOCAL-00001" summary="переустановка заново">
       <created>1557416268420</created>
@@ -3623,7 +3623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574623476561</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Готовие замовлення товару з відніманням в базі">
+      <created>1578685902083</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1578685902083</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -3685,7 +3692,8 @@
     <MESSAGE value="оновлення композера" />
     <MESSAGE value="починаю редактор" />
     <MESSAGE value="дизайн головної" />
-    <option name="LAST_COMMIT_MESSAGE" value="дизайн головної" />
+    <MESSAGE value="Готовие замовлення товару з відніманням в базі" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готовие замовлення товару з відніманням в базі" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -3716,10 +3724,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="0" y="211" key="#xdebugger.XInspectDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1578498584476" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1574623474989">
+    <state x="505" y="88" key="CommitChangelistDialog2" timestamp="1578685881611">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1574623474989" />
+    <state x="505" y="88" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1578685881611" />
     <state x="709" y="294" key="FileChooserDialogImpl" timestamp="1571353607928">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -3801,10 +3809,10 @@
     </state>
     <state x="568" y="243" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1575717943462" />
     <state x="415" y="181" key="SettingsEditor/1920.1080" timestamp="1570918622622" />
-    <state x="521" y="253" key="Vcs.Push.Dialog.v2" timestamp="1574623483951">
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2" timestamp="1578685910850">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="253" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1574623483951" />
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1578685910850" />
     <state width="937" height="548" key="XDebugger.FullValuePopup" timestamp="1578499031606">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
