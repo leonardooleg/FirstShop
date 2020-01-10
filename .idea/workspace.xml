@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="бекап базм">
+    <list default="true" id="0a8135a7-3778-47aa-babf-62d203d6d0be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footerCart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footerCart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/constructor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/constructor.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -543,6 +546,7 @@
       <workItem from="1578493566603" duration="18992000" />
       <workItem from="1578593809516" duration="11725000" />
       <workItem from="1578673467358" duration="8138000" />
+      <workItem from="1578686064188" duration="2159000" />
     </task>
     <task id="LOCAL-00001" summary="переустановка заново">
       <created>1557416268420</created>
@@ -733,7 +737,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578685965731</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="бекап бази">
+      <created>1578686097933</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1578686097933</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -797,7 +808,8 @@
     <MESSAGE value="дизайн головної" />
     <MESSAGE value="Готовие замовлення товару з відніманням в базі" />
     <MESSAGE value="бекап базм" />
-    <option name="LAST_COMMIT_MESSAGE" value="бекап базм" />
+    <MESSAGE value="бекап бази" />
+    <option name="LAST_COMMIT_MESSAGE" value="бекап бази" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -828,10 +840,10 @@
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="0" y="211" key="#xdebugger.XInspectDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1578498584476" />
-    <state x="505" y="88" key="CommitChangelistDialog2" timestamp="1578685984088">
+    <state x="505" y="88" key="CommitChangelistDialog2" timestamp="1578686094000">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="505" y="88" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1578685984088" />
+    <state x="505" y="88" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1578686094000" />
     <state x="709" y="294" key="FileChooserDialogImpl" timestamp="1571353607928">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
@@ -913,18 +925,18 @@
     </state>
     <state x="568" y="243" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1575717943462" />
     <state x="415" y="181" key="SettingsEditor/1920.1080" timestamp="1570918622622" />
-    <state x="521" y="253" key="Vcs.Push.Dialog.v2" timestamp="1578685910850">
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2" timestamp="1578686100335">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="521" y="253" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1578685910850" />
+    <state x="521" y="253" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1578686100335" />
     <state width="937" height="548" key="XDebugger.FullValuePopup" timestamp="1578499031606">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state width="937" height="548" key="XDebugger.FullValuePopup/0.0.1858.1080@0.0.1858.1080" timestamp="1578499031606" />
-    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578614043389">
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578692592797">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1578614043389" />
+    <state x="92" y="92" width="1674" height="896" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1858.1080@0.0.1858.1080" timestamp="1578692592797" />
     <state x="736" y="451" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1574623442371">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
