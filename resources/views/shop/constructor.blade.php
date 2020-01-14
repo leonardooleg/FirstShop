@@ -17,39 +17,24 @@
         <div class="product-top row">
             <div class="product-breadcrumbs col-md-12 col-xs-12 ">
                 <div class="breadcrumb-row">
-                    <img src="/icon/home.png" class="home-icon"> 000
+                    <img src="/icon/home.png" class="home-icon">  <h3 style="   display: inline-flex;" id="clothing">Конструктор дизайна</h3>
                 </div>
             </div>
         </div>
-        <!-- breadcrumbs -->
-        <!-- Product -->
+        <!-- Construct -->
         <div class=" row">
-            <section class="product" itemscope="" itemtype="http://schema.org/Product">
+            <section class="construct col-md-12" itemscope="">
                 <!---Construct2-->
-                <div id="main-container">
-                    <h3 id="clothing">Конструктор дизайна</h3>
-                    <div id="clothing-designer" class="fpd-container fpd-shadow-2 fpd-topbar fpd-tabs fpd-tabs-side fpd-top-actions-centered fpd-bottom-actions-centered fpd-views-inside-left"> </div>
-                    <br />
+                <div>
+                    <div id="clothing-designer" class="fpd-container fpd-shadow-2 fpd-sidebar fpd-tabs fpd-tabs-side fpd-top-actions-centered fpd-bottom-actions-centered fpd-views-inside-left"></div>
 
-                    <div class="fpd-clearfix" style="margin-top: 30px;">
-                        <div class="api-buttons fpd-container fpd-left">
-                            <a href="#" id="print-button" class="fpd-btn">Печать</a>
-                            <a href="#" id="image-button" class="fpd-btn">Создать изображение</a>
-                            <a href="#" id="checkout-button" class="fpd-btn">Проверить</a>
-                            <a href="#" id="recreation-button" class="fpd-btn">Пересоздать</a>
-                        </div>
-
+                    <br /><br />
+                    <div class="fpd-right">
+                        <span class="price badge badge-inverse"><span id="thsirt-price"></span> $</span>
                     </div>
-
-                    <p class="fpd-container" style="display: none">
-                        Only working on a webserver:<br />
-                        <span class="fpd-btn" id="save-image-php">Save image with php</span>
-                        <span class="fpd-btn" id="send-image-mail-php">Send image to mail</span>
-                    </p>
-
+                    <div id="my-variations"></div>
                 </div>
                 <!---Construct2-->
-
 
 
 

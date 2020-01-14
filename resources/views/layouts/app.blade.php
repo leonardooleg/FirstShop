@@ -24,126 +24,100 @@
     <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
 
     @if("/constructor"== $_SERVER['REQUEST_URI'])
-        <link rel="stylesheet" type="text/css" href="/designer/css/main.css">
-
         <!-- The CSS for the plugin itself - required -->
-        <link rel="stylesheet" type="text/css" href="/designer/css/FancyProductDesigner-all.min.css" />
+            <link rel="stylesheet" type="text/css" href="/designer/css/FancyProductDesigner-all.min.css" />
 
-        <!-- Include required jQuery files -->
-        <script src="/designer/js/jquery.min.js" type="text/javascript"></script>
-        <script src="/designer/js/jquery-ui.min.js" type="text/javascript"></script>
+            <!-- Include required jQuery files -->
+            <script src="/designer/js/jquery.min.js" type="text/javascript"></script>
+            <script src="/designer/js/jquery-ui.min.js" type="text/javascript"></script>
 
-        <!-- HTML5 canvas library - required -->
-        <script src="/designer/js/fabric.min.js" type="text/javascript"></script>
-        <!-- The plugin itself - required -->
-        <script src="/designer/js/FancyProductDesigner-all.min.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function(){
+            <!-- HTML5 canvas library - required -->
+            <script src="/designer/js/fabric.min.js" type="text/javascript"></script>
+            <!-- The plugin itself - required -->
+            <script src="/designer/js/FancyProductDesigner-all.min.js" type="text/javascript"></script>
+            <!-- Include Plus Add-On -->
+            <script src="/designer/js/FancyProductDesignerPlus.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function(){
 
-                var $yourDesigner = $('#clothing-designer'),
-                    pluginOpts = {
-                        productsJSON: '/designer/json/products.json', //see JSON folder for products sorted in categories
-                        designsJSON: '/designer/json/designs.json', //see JSON folder for designs sorted in categories
-                        stageWidth: 1200,
-                        editorMode: false,
-                        smartGuides: true,
-                        zChangeable : true,
-                        fonts: [
-                            {name: 'Helvetica'},
-                            {name: 'Times New Roman'},
-                            {name: 'Pacifico', url: 'Enter_URL_To_Pacifico_TTF'},
-                            {name: 'Arial'},
-                            {name: 'Lobster', url: 'google'}
-                        ],
-                        customTextParameters: {
-                            colors: false,
-                            removable: true,
-                            resizable: true,
-                            draggable: true,
-                            rotatable: true,
-                            autoCenter: true,
-                            boundingBoxMode: "clipping",
-                            boundingBox:{
-                                x: 440,
-                                y: 200,
-                                height: 230,
-                                width: 170,
-                            }
+                    if(typeof FancyProductDesignerPlus === 'undefined') {
+                        alert("For this demo the Fancy Product Designer Plus Add-On is required!");
+                        return false;
+                    }
+                    var $yourDesigner = $('#clothing-designer'),
+                        pluginOpts = {
+                            productsJSON: '/designer/json/products.json',
+                            designsJSON: '/designer/json/designs.json', //see JSON folder for designs sorted in categories
+                            stageWidth: 1200,
+                            editorMode: false,
+                            smartGuides: true,
+                            fonts: [
+                                {name: 'Helvetica'},
+                                {name: 'Times New Roman'},
+                                {name: 'Pacifico', url: '/designer/fonts/Pacifico.ttf'},
+                                {name: 'Arial'},
+                                {name: 'Lobster', url: 'google'}
+                            ],
+                            customTextParameters: {
+                                colors: false,
+                                removable: true,
+                                resizable: true,
+                                draggable: true,
+                                rotatable: true,
+                                autoCenter: true,
+                                boundingBoxMode: "clipping",
+                                boundingBox:{
+                                    x: 440,
+                                    y: 200,
+                                    height: 230,
+                                    width: 170,
+                                }
 
+                            },
+                            customImageParameters: {
+                                topped: true,
+                                draggable: true,
+                                removable: true,
+                                resizable: true,
+                                rotatable: true,
+                                colors: '#000',
+                                autoCenter: true,
+                                boundingBoxMode: "clipping",
+                                boundingBox:{
+                                    x: 440,
+                                    y: 200,
+                                    height: 230,
+                                    width: 170,
+                                }
+                                /*resizeToW: 600,
+                                resizeToH: 600,
+                                scaleMode: "cover",
+                                scale: 0.5,*/
+                            },
+                            actions: {
+                                'top': ['download','print', 'snap', 'preview-lightbox'],
+                                'right': ['magnify-glass', 'zoom', 'reset-product', 'qr-code', 'ruler'],
+                                'bottom': ['undo','redo'],
+                                'left': ['manage-layers','info','save','load']
+                            },
+                            initialActiveModule: "text",
+                            mainBarModules: ['products','images','text','designs','drawing'],
+                            colorSelectionPlacement: 'inside-br',
+                            namesNumbersDropdown: ['S', 'M', 'L', 'XL'],
+                            namesNumbersEntryPrice: 10,
+                            bulkVariationsPlacement: '#my-variations',
+                            bulkVariations: {'Size': ['XL', 'L', 'M', 'S'], 'Color': ['Red', 'Blue']}
                         },
-                        customImageParameters: {
-                            topped: true,
-                            draggable: true,
-                            removable: true,
-                            resizable: true,
-                            rotatable: true,
-                            colors: '#000',
-                            autoCenter: true,
-                            boundingBoxMode: "clipping",
-                            boundingBox:{
-                                x: 440,
-                                y: 200,
-                                height: 230,
-                                width: 170,
-                            }
-                            /*resizeToW: 600,
-                            resizeToH: 600,
-                            scaleMode: "cover",
-                            scale: 0.5,*/
-                        },
-                        actions:  {
-                            'right': ['magnify-glass', 'zoom', 'reset-product', 'qr-code', 'ruler'],
-                            'bottom': ['undo','redo'],
-                            'left': ['download','print', 'snap', 'preview-lightbox']
-                        }
-                    },
+                        yourDesigner = new FancyProductDesigner($yourDesigner, pluginOpts);
 
-                    yourDesigner = new FancyProductDesigner($yourDesigner, pluginOpts);
-
-                //print button
-                $('#print-button').click(function(){
-                    yourDesigner.print();
-                    return false;
-                });
-
-                //create an image
-                $('#image-button').click(function(){
-                    var image = yourDesigner.createImage();
-                    return false;
-                });
-
-                //checkout button with getProduct()
-                $('#checkout-button').click(function(){
-                    var product = yourDesigner.getProduct();
-                    console.log(product);
-                    return false;
-                });
-
-                //event handler when the price is changing
-                $yourDesigner.on('priceChange', function(evt, price, currentPrice) {
-                    $('#thsirt-price').text(currentPrice);
-                });
-
-                //save image on webserver
-                $('#save-image-php').click(function() {
-
-                    yourDesigner.getProductDataURL(function(dataURL) {
-                        $.post( "/designer/php/save_image.php", { base64_image: dataURL} );
+                    //event handler when the price is changing
+                    $yourDesigner.on('priceChange', function(evt, price, currentPrice) {
+                        $('#thsirt-price').text(currentPrice);
                     });
 
                 });
+            </script>
 
-                //send image via mail
-                $('#send-image-mail-php').click(function() {
-
-                    yourDesigner.getProductDataURL(function(dataURL) {
-                        $.post( "/designer/php/send_image_via_mail.php", { base64_image: dataURL} );
-                    });
-
-                });
-
-            });
-        </script>
     @endif
 
 </head>

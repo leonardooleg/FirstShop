@@ -35,7 +35,6 @@
 		"advanced_editing": "Advanced Editing",
 		"text_transform": "Text Transform",
 		"stroke_width": "Width",
-		"color": "Color",
 		"back": "Back",
 		"shadow": "Shadow",
 		"shadow_blur": "Blur",
@@ -52,7 +51,7 @@
 		"info_content": "Content for the Info Action Button. Change content via language JSON.",
 		"print": "Печать",
 		"save": "Save",
-		"load": "Load",
+		"load": "Load Designs",
 		"manage_layers": "Manage Layers",
 		"qr_code": "Add QR-Code",
 		"qr_code_input": "Enter a URL, some text...",
@@ -65,7 +64,8 @@
 		"ruler": "Позволить править",
 		"previous_view": "Previous View",
 		"next_view": "Next View",
-		"start_guided_tour": "Start Guided Tour"
+		"start_guided_tour": "Start Guided Tour",
+		"load_designs_empty": "No Designs saved yet!"
 	},
 	"modules": {
 		"products": "Выбрать продукт",
@@ -82,6 +82,7 @@
 		"manage_layers": "Настройки",
 		"images_agreement": "I have the rights to use the images.",
 		"images_confirm_button": "Confirm",
+		"images_pdf_upload_info": "Creating images from PDF...",
 		"pixabay_search": "Search in Pixabay library",
 		"depositphotos_search": "Search in depositphotos.com",
 		"depositphotos_search_category": "Search In ",

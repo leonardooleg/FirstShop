@@ -52,9 +52,9 @@ Route::get('/cart/details','CartController@details')->name('cart.details');
 Route::get('/cart/update/{id}&{action}','CartController@update')->name('cart.update');
 Route::delete('/cart/{id}','CartController@delete')->name('cart.delete');
 
-Route::post('/cart2-details','Cart2Controller@go')->name('cart2.go');
-Route::get('/cart2','Cart2Controller@index')->name('cart2.index');
-Route::post('/cart2','Cart2Controller@add')->name('cart2.add');
+Route::post('/cart2-details','Cart2Controller@go')->name('cart2.go')->middleware('auth');
+Route::get('/cart2','Cart2Controller@index')->name('cart2.index')->middleware('auth');
+Route::post('/cart2','Cart2Controller@add')->name('cart2.add')->middleware('auth');
 /*Route::get('/cart-finish','Cart2Controller@finish')->name('cart3.finish');*/
 
 

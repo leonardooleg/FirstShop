@@ -3,6 +3,10 @@
 	<!-- Smart-Toolbar when an element is selected (V2.0) -->
 	<div class="fpd-element-toolbar-smart fpd-visibility">
 
+		<div class="fpd-panel-edit-text fpd-hidden">
+			<textarea data-control="text"></textarea>
+		</div>
+
 		<div class="fpd-top-tools fpd-clearfix">
 
 			<div class="fpd-tool-color fpd-tooltip" data-panel="color" data-defaulttext="Color" title="toolbar.color" data-control="fill">
@@ -692,7 +696,7 @@
 								 <span class="fpd-price">Hello</span>
 					        </div>
 				        </div>
-				        <input type="file" multiple="multiple" class="fpd-input-image" name="files[]" accept="image/jpeg,image/jpg,image/png,image/svg+xml" />
+				        <input type="file" multiple="multiple" class="fpd-input-image" name="files[]" accept="image/jpeg,image/jpg,image/png,image/svg+xml,application/pdf" />
 		            </form>
 		            <div class="fpd-scroll-area">
 						<div class="fpd-grid fpd-grid-cover fpd-photo-grid"></div>
@@ -889,6 +893,8 @@
 			</div><!-- Upload Zone Adds -->
 
 			<div class="fpd-saved-designs-panel">
+
+				<div class="fpd-empty-saved-designs fpd-hidden" data-defaulttext="No Designs saved yet!">actions.load_designs_empty</div>
 
 				<div class="fpd-scroll-area">
 					<div class="fpd-grid fpd-grid-contain fpd-padding"></div>

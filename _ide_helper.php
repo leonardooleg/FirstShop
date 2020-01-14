@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.36 on 2019-12-24 17:06:36.
+ * Generated for Laravel 5.8.36 on 2020-01-13 23:54:10.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -14766,14 +14766,15 @@ namespace Darryldecode\Cart\Facades {
          * @param int $quantity
          * @param array $attributes
          * @param \Darryldecode\Cart\CartCondition|array $conditions
+         * @param string $associatedModel
          * @return \Darryldecode\Cart\Cart 
          * @throws InvalidItemException
          * @static 
          */ 
-        public static function add($id, $name = null, $price = null, $quantity = null, $attributes = [], $conditions = [])
+        public static function add($id, $name = null, $price = null, $quantity = null, $attributes = [], $conditions = [], $associatedModel = null)
         {
                         /** @var \Darryldecode\Cart\Cart $instance */
-                        return $instance->add($id, $name, $price, $quantity, $attributes, $conditions);
+                        return $instance->add($id, $name, $price, $quantity, $attributes, $conditions, $associatedModel);
         }
         
         /**
@@ -15065,6 +15066,20 @@ namespace Darryldecode\Cart\Facades {
         {
                         /** @var \Darryldecode\Cart\Cart $instance */
                         return $instance->setThousandsSep($thousands_sep);
+        }
+        
+        /**
+         * Associate the cart item with the given id with the given model.
+         *
+         * @param string $id
+         * @param mixed $model
+         * @return void 
+         * @static 
+         */ 
+        public static function associate($model)
+        {
+                        /** @var \Darryldecode\Cart\Cart $instance */
+                        $instance->associate($model);
         }
          
     }

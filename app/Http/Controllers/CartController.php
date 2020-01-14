@@ -11,13 +11,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Color;
 use App\Models\Size;
+use Auth;
 use Darryldecode\Cart\CartCondition;
+use Session;
 
 class CartController extends Controller
 {
     public function index()
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
 
         if(request()->ajax())
         {
@@ -42,7 +57,21 @@ class CartController extends Controller
 
     public function add()
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
+
 
         $name = request('name');
         $price = request('price');
@@ -75,7 +104,20 @@ class CartController extends Controller
 
     public function addCondition()
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
 
         /** @var \Illuminate\Validation\Validator $v */
         $v = validator(request()->all(),[
@@ -118,7 +160,20 @@ class CartController extends Controller
 
     public function clearCartConditions()
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
 
         \Cart::session($userId)->clearCartConditions();
 
@@ -131,7 +186,20 @@ class CartController extends Controller
 
     public function update($cart_id,$actions)
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
         \Cart::session($userId);
         //$cart = \Cart::session($userId)->getContent();
         if($actions==1)
@@ -150,7 +218,20 @@ class CartController extends Controller
 
     public function delete($id)
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
 
         \Cart::session($userId)->remove($id);
 
@@ -163,7 +244,20 @@ class CartController extends Controller
 
     public function details()
     {
-        $userId = 1; // get this from session or wherever it came from
+        if(Auth::guest()){
+            //user is a guest/visitor
+            if(Session::has('user_id')){
+                $uniqid = Session::get('user_id');
+                $userId = $uniqid;
+            }else{
+                $uniqid = uniqid();
+                Session::put('user_id',$uniqid);
+                $userId = $uniqid;
+            }
+        }else{
+            //user login
+            $userId = Auth::id();
+        }
 
         // get subtotal applied condition amount
         $conditions = \Cart::session($userId)->getConditions();
